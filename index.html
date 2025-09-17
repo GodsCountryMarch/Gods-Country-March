@@ -60,44 +60,42 @@
 <!-- HERO -->
 <section id="home" class="relative isolate pt-28 text-white overflow-hidden">
   <!-- Background image -->
-  <div aria-hidden
-    class="absolute inset-0 -z-10 bg-cover bg-no-repeat
-       bg-[position:50%_40%] md:bg-[position:50%_32%]"
-     style="background-image:url('BoiseCrossandCapital.jpeg')"></div>
+  <div class="absolute inset-0 -z-10 bg-center bg-cover"
+       style="background-image:url('/BoiseCrossandCapital.jpeg'); background-position:50% 35%;"></div>
+  <!-- Subtle dark overlay to pop text -->
+  <div class="absolute inset-0 -z-10 bg-black/40"></div>
 
-  <!-- Dark overlay removed -->
-<!-- <div class="absolute inset-0 -z-10 bg-black/45"></div> -->
+  <div class="mx-auto max-w-7xl px-4 py-24 text-center">
+    <!-- Mission tagline -->
+    <p class="mb-3 text-sm sm:text-base tracking-wide text-white/90">Uniting Idaho in faith, freedom, and community</p>
 
-
-  <!-- Foreground content -->
-  <div class="mx-auto max-w-7xl px-4 py-24 text-center relative z-10">
-    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-wide text-white"
-    style="text-shadow: 0 3px 8px rgba(0,0,0,0.9);">
-  God’s Country March
+    <!-- Big title -->
+    <h1 class="text-4xl sm:text-6xl font-black tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
+      God’s Country March
     </h1>
 
-    <!-- Clickable date badge -->
+    <!-- Date badge (clickable to Details) -->
     <a href="#details"
-   class="mt-6 mx-auto w-fit inline-flex items-center gap-3 rounded-full
-          px-7 py-3 text-lg sm:text-xl font-bold tracking-wide
-          text-white bg-black/70 backdrop-blur-md
-          ring-1 ring-white/40 shadow-2xl hover:scale-[1.03] transition">
-  <span class="h-3.5 w-3.5 rounded-full bg-amber-400
-               shadow-[0_0_10px_rgba(251,191,36,0.9)]"></span>
-  <span>
-    Tue, Oct 14, 2025 • 6:00 PM • Idaho State Capitol Steps
-      </span>
+       class="mt-6 inline-flex items-center gap-2 rounded-full border border-white/20
+              bg-black/70 px-4 py-2 text-sm shadow backdrop-blur hover:bg-black/80">
+      <span class="h-2 w-2 rounded-full bg-amber-400"></span>
+      Tue, Oct 14, 2025 • 6:00 PM • Idaho State Capitol Steps
     </a>
 
-    <!-- Subheading -->
-    <h2  class="mt-6 text-2xl sm:text-4xl font-bold text-white"
-    style="text-shadow: 0 2px 6px rgba(0,0,0,0.8);">
-  Peaceful March in Honor of Charlie and Christ
-    </h2>
-    <pclass="mt-4 text-lg sm:text-xl max-w-2xl mx-auto text-white"
-    style="text-shadow: 0 1px 5px rgba(0,0,0,0.8);">
-  Honor Charlie. Link arms. Pray. Walk together in faith. Idaho can lead with courage and kindness — add your voice on the Capitol steps.
+    <p class="mt-6 text-lg sm:text-xl max-w-2xl mx-auto opacity-95">
+      Honor Charlie. Link arms. Pray. Walk together in faith. Idaho can lead with courage
+      and kindness — add your voice on the Capitol steps.
     </p>
+
+    <!-- Dual CTAs -->
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a href="#rsvp"
+         class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-2xl
+                shadow hover:shadow-lg transition active:scale-[.99] bg-white text-slate-900">Join the March</a>
+      <a href="#donate"
+         class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-2xl
+                shadow hover:shadow-lg transition active:scale-[.99] bg-black/70 border border-white/20">Support the Movement</a>
+    </div>
   </div>
 </section>
 
