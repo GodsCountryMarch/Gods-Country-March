@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* extra tiny helper for the hero */
+.bg-hero{
+  background:
+    radial-gradient(circle at center,transparent 0%,transparent 45%,rgba(0,0,0,.4) 70%,rgba(0,0,0,.75) 100%),
+    linear-gradient(135deg,rgba(185,28,28,.6) 0%,rgba(185,28,28,0) 50%),
+    linear-gradient(315deg,rgba(30,64,175,.6) 0%,rgba(30,64,175,0) 50%),
+    #0a0f1a;
+}
