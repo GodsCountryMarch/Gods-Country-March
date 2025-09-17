@@ -183,29 +183,17 @@
 <!-- RSVP (works with Formspree or Google Forms) -->
 <section id="rsvp" class="py-20 bg-black text-white text-center">
   <h2 class="text-3xl font-extrabold drop-shadow-md">RSVP to get updates</h2>
-  <p class="mt-4 text-lg text-gray-300">
-    Sign up to receive updates about speakers, details, and reminders for the March.
-  </p>
+  <p class="mt-4 text-lg text-gray-300">Sign up to receive updates about speakers, details, and reminders for the March.</p>
 
   <form action="https://formspree.io/f/xblavkrd" method="POST" class="mt-8 max-w-md mx-auto space-y-4">
-    <!-- Full Name -->
-    <input type="text" name="name" placeholder="Full Name" required
-      class="w-full px-4 py-3 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-amber-400" />
-
-    <!-- Email -->
-    <input type="email" name="email" placeholder="Email" required
-      class="w-full px-4 py-3 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-amber-400" />
-
-    <!-- Optional Message -->
+    <input type="text"   name="name"  placeholder="Full Name" required
+           class="w-full px-4 py-3 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-amber-400" />
+    <input type="email"  name="email" placeholder="Email"     required
+           class="w-full px-4 py-3 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-amber-400" />
     <textarea name="message" placeholder="Message (optional)" rows="3"
-      class="w-full px-4 py-3 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-amber-400"></textarea>
-
-    <!-- Hidden field (if you want to label the form) -->
-    <input type="hidden" name="form-name" value="Gods Country March RSVP" />
-
-    <!-- Submit -->
+              class="w-full px-4 py-3 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-amber-400"></textarea>
     <button type="submit"
-      class="w-full bg-amber-500 text-black font-bold py-3 px-6 rounded-md shadow-md hover:bg-amber-400 transition">
+            class="w-full bg-amber-500 text-black font-bold py-3 px-6 rounded-md shadow-md hover:bg-amber-400 transition">
       RSVP
     </button>
   </form>
