@@ -41,8 +41,10 @@
 <!-- HERO -->
 <section id="home" class="relative isolate pt-28 text-white overflow-hidden">
   <!-- Background image -->
-  <div aria-hidden class="absolute inset-0 -z-10 bg-center bg-cover"
-       style="background-image:url('BoiseCrossandCapital.jpeg')"></div>
+  <div aria-hidden
+    class="absolute inset-0 -z-10 bg-cover bg-no-repeat
+       bg-[position:50%_40%] md:bg-[position:50%_32%]"
+     style="background-image:url('BoiseCrossandCapital.jpeg')"></div>
 
   <!-- Dark overlay removed -->
 <!-- <div class="absolute inset-0 -z-10 bg-black/45"></div> -->
@@ -57,12 +59,14 @@
 
     <!-- Clickable date badge -->
     <a href="#details"
-       class="mt-6 mx-auto w-fit inline-flex items-center gap-2 rounded-full
-              border border-white/30 bg-black/80 px-6 py-2.5
-              text-base sm:text-lg text-white shadow-lg hover:scale-[1.02] transition">
-      <span class="h-3.5 w-3.5 rounded-full bg-amber-400"></span>
-      <span class="font-semibold tracking-wide">
-        Tue, Oct 14, 2025 • 6:00 PM • Idaho State Capitol Steps
+   class="mt-6 mx-auto w-fit inline-flex items-center gap-3 rounded-full
+          px-7 py-3 text-lg sm:text-xl font-bold tracking-wide
+          text-white bg-black/70 backdrop-blur-md
+          ring-1 ring-white/40 shadow-2xl hover:scale-[1.03] transition">
+  <span class="h-3.5 w-3.5 rounded-full bg-amber-400
+               shadow-[0_0_10px_rgba(251,191,36,0.9)]"></span>
+  <span>
+    Tue, Oct 14, 2025 • 6:00 PM • Idaho State Capitol Steps
       </span>
     </a>
 
