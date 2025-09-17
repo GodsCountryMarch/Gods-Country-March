@@ -42,8 +42,8 @@
       <!-- Brand -->
       <a href="/" class="font-black tracking-tight text-lg">God’s Country March</a>
 
-      <!-- Desktop nav -->
-      <nav class="hidden sm:flex items-center gap-6 text-sm">
+      <!-- Desktop nav (md and up) -->
+      <nav class="hidden md:flex items-center gap-6 text-sm">
         <a href="/mission.html" class="hover:opacity-90">Mission &amp; Vision</a>
         <a href="/founder.html" class="hover:opacity-90">Meet the Founder</a>
         <a href="/gallery.html" class="hover:opacity-90">Photos</a>
@@ -51,17 +51,71 @@
         <a href="/volunteer.html" class="hover:opacity-90">Volunteer</a>
         <a href="/donate.html" class="hover:opacity-90">Donate</a>
       </nav>
-     
-     <!-- RSVP button -->
-<a href="#rsvp" class="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold rounded-2xl shadow hover:shadow-lg transition active:scale-[.99] bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-white/40">RSVP</a>
 
-       RSVP
+      <!-- Desktop RSVP -->
+      <a
+        href="#rsvp"
+        class="hidden md:inline-flex items-center justify-center px-4 py-2 text-sm font-semibold rounded-2xl shadow hover:shadow-lg transition active:scale-[.99] bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-white/40"
+      >
+        RSVP
       </a>
+
+      <!-- Mobile hamburger -->
+      <button
+        id="menuBtn"
+        class="md:hidden inline-flex items-center justify-center rounded-xl p-2 ring-1 ring-white/15 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/30"
+        aria-controls="mobileMenu"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Open menu</span>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
     </div>
   </div>
 </header>
+<!-- NAV END -->
 
-<!-- Spacer so the hero doesn’t hide behind the fixed header -->
+<!-- Spacer so content doesn’t hide behind the fixed header -->
+<div class="h-24"></div>
+
+<!-- Mobile menu panel -->
+<div id="mobileMenu" class="fixed inset-0 z-50 hidden md:hidden">
+  <!-- Backdrop -->
+  <div id="menuBackdrop" class="absolute inset-0 bg-black/60"></div>
+
+  <!-- Panel -->
+  <div class="ml-auto h-full w-80 max-w-[85vw] bg-slate-900 text-white shadow-2xl ring-1 ring-white/10 flex flex-col">
+    <div class="p-4 flex items-center justify-between border-b border-white/10">
+      <span class="font-semibold">Menu</span>
+      <button id="menuClose" class="rounded-lg p-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/30" aria-label="Close menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <nav class="px-4 py-4 space-y-1 text-sm">
+      <a href="/mission.html" class="block rounded-lg px-3 py-2 hover:bg-white/10">Mission &amp; Vision</a>
+      <a href="/founder.html" class="block rounded-lg px-3 py-2 hover:bg-white/10">Meet the Founder</a>
+      <a href="/gallery.html" class="block rounded-lg px-3 py-2 hover:bg-white/10">Photos</a>
+      <a href="/blog.html" class="block rounded-lg px-3 py-2 hover:bg-white/10">Blog</a>
+      <a href="/volunteer.html" class="block rounded-lg px-3 py-2 hover:bg-white/10">Volunteer</a>
+      <a href="/donate.html" class="block rounded-lg px-3 py-2 hover:bg-white/10">Donate</a>
+
+      <div class="pt-3">
+        <a
+          href="#rsvp"
+          class="inline-flex items-center justify-center w-full px-4 py-2 text-sm font-semibold rounded-2xl shadow hover:shadow-lg transition active:scale-[.99] bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-white/40"
+        >
+          RSVP
+        </a>
+      </div>
+    </nav>
+  </div>
+</div>
+
 <div class="h-24"></div>
 <!-- NAV END -->
 
