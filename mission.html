@@ -18,3 +18,32 @@
 </header>
 <div class="pt-24"></div> <!-- spacer so content clears the fixed header -->
 
+<!-- FOOTER (copy into each page) -->
+<footer class="bg-black/95 text-white mt-20">
+  <div class="mx-auto max-w-7xl px-4 py-12 grid sm:grid-cols-3 gap-8">
+    <div>
+      <p class="font-semibold">God’s Country March</p>
+      <p class="text-white/70 mt-2 text-sm">Idaho • A movement of faith, freedom, and community.</p>
+    </div>
+    <div>
+      <p class="font-semibold">Contact</p>
+      <p class="text-white/70 mt-2 text-sm">
+        info@godscountrymarch.org
+      </p>
+    </div>
+    <div>
+      <p class="font-semibold">Links</p>
+      <div class="mt-2 flex flex-col text-sm text-white/80 gap-1">
+        <a href="/mission.html" class="hover:text-white">Mission & Vision</a>
+        <a href="/founder.html" class="hover:text-white">Meet the Founder</a>
+        <a href="/gallery.html" class="hover:text-white">Photos</a>
+        <a href="/blog.html" class="hover:text-white">Blog</a>
+        <a href="/volunteer.html" class="hover:text-white">Volunteer</a>
+      </div>
+    </div>
+  </div>
+  <div class="text-center text-white/60 text-xs pb-6">
+    © <span id="year"></span> God’s Country March. All rights reserved.
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
