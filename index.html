@@ -25,16 +25,16 @@
     .nav-words a{ text-decoration:none; }
     .nav-words a.active{ text-decoration:underline; }
 
-    /* HERO title: single line, scales to fit */
-    .hero-title{
-      white-space: nowrap;             /* keep one line */
-      letter-spacing: .02em;
-      line-height: .9;
-      font-weight: 900;
-      /* fluid sizing that stays on one line across devices */
-      font-size: clamp(2.2rem, 8.5vw, 9rem);
-      text-shadow: 0 2px 10px rgba(0,0,0,.45);
-    }
+  /* HERO title: single line, scaled but capped smaller */
+.hero-title{
+  white-space: nowrap;        /* keep one line */
+  letter-spacing: .02em;
+  line-height: .95;
+  font-weight: 900;
+  /* smaller cap + gentler scaling */
+  font-size: clamp(2.25rem, 7vw, 6.25rem);
+  text-shadow: 0 2px 10px rgba(0,0,0,.45);
+}
 
     /* Larger event pill */
     .event-pill{
