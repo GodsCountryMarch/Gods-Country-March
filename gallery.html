@@ -1,49 +1,281 @@
-<!-- HEADER (copy into each page) -->
-<header class="fixed top-0 inset-x-0 z-40">
-  <div class="mx-auto max-w-7xl px-4">
-    <div class="mt-4 mb-2 flex items-center justify-between rounded-2xl bg-black/90 text-white backdrop-blur px-4 py-3 shadow-xl ring-1 ring-white/10">
-      <a href="/index.html#home" class="font-black tracking-tight text-lg">God’s Country March</a>
-      <nav class="hidden sm:flex items-center gap-6 text-sm">
-        <a href="/mission.html" class="hover:opacity-90">Mission & Vision</a>
-        <a href="/founder.html" class="hover:opacity-90">Meet the Founder</a>
-        <a href="/gallery.html" class="hover:opacity-90">Photos</a>
-        <a href="/blog.html" class="hover:opacity-90">Blog</a>
-        <a href="/volunteer.html" class="hover:opacity-90">Volunteer</a>
-      </nav>
-      <a href="/index.html#rsvp" class="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold rounded-2xl shadow bg-white text-slate-900 hover:shadow-lg">
-        RSVP
-      </a>
-    </div>
-  </div>
-</header>
-<div class="pt-24"></div> <!-- spacer so content clears the fixed header -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#000000" />
+  <title>Photos • God’s Country March</title>
 
-<!-- FOOTER (copy into each page) -->
-<footer class="bg-black/95 text-white mt-20">
-  <div class="mx-auto max-w-7xl px-4 py-12 grid sm:grid-cols-3 gap-8">
-    <div>
-      <p class="font-semibold">God’s Country March</p>
-      <p class="text-white/70 mt-2 text-sm">Idaho • A movement of faith, freedom, and community.</p>
-    </div>
-    <div>
-      <p class="font-semibold">Contact</p>
-      <p class="text-white/70 mt-2 text-sm">
-        info@godscountrymarch.org
-      </p>
-    </div>
-    <div>
-      <p class="font-semibold">Links</p>
-      <div class="mt-2 flex flex-col text-sm text-white/80 gap-1">
-        <a href="/mission.html" class="hover:text-white">Mission & Vision</a>
-        <a href="/founder.html" class="hover:text-white">Meet the Founder</a>
-        <a href="/gallery.html" class="hover:text-white">Photos</a>
-        <a href="/blog.html" class="hover:text-white">Blog</a>
-        <a href="/volunteer.html" class="hover:text-white">Volunteer</a>
+  <link rel="canonical" href="https://godscountrymarch.com/gallery.html" />
+  <meta name="description" content="Photo gallery from the God’s Country March." />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Hero/Background asset (optional) -->
+  <link rel="preload" as="image" href="BoiseCrossandCapital.jpeg" />
+
+  <style>
+    html { scroll-behavior: smooth; }
+    section[id] { scroll-margin-top: 96px; }
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #1a202c, #2d3748);
+      color: #fff;
+    }
+    header { padding-top: env(safe-area-inset-top); }
+    .nav-words a { text-decoration: none; }
+    .nav-words a:hover { text-decoration: underline; }
+    @media (prefers-reduced-motion: reduce){ *{animation:none!important;transition:none!important;} }
+  </style>
+
+  <!-- Optional: Vercel Analytics -->
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+<body class="text-white">
+
+  <!-- WORD-STRIP NAV (same as index) -->
+  <header class="fixed top-0 inset-x-0 z-50">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="mt-3 mb-2 flex justify-center">
+        <nav class="nav-words w-full rounded-2xl bg-black/70 backdrop-blur text-white shadow ring-1 ring-white/10
+                    px-3 sm:px-4 py-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[13px] sm:text-sm">
+          <a href="index.html" class="font-semibold hover:text-amber-400">God’s Country March</a>
+          <span class="hidden sm:inline opacity-40">•</span>
+          <a href="mission.html" class="hover:text-amber-400">Mission &amp; Vision</a>
+          <span class="hidden sm:inline opacity-40">•</span>
+          <a href="sponsors.html" class="hover:text-amber-400">Sponsors &amp; Supporters</a>
+          <span class="hidden sm:inline opacity-40">•</span>
+          <a href="gallery.html" class="hover:text-amber-400 underline">Photos</a>
+          <span class="hidden sm:inline opacity-40">•</span>
+          <a href="blog.html" class="hover:text-amber-400">Blog</a>
+          <span class="hidden sm:inline opacity-40">•</span>
+          <a href="volunteer.html" class="hover:text-amber-400">Volunteer</a>
+          <span class="hidden sm:inline opacity-40">•</span>
+          <a href="https://donorbox.org/2025-gods-country-march" target="_blank" rel="noopener" class="hover:text-amber-400">Donate</a>
+          <span class="hidden sm:inline opacity-40">•</span>
+          <a href="index.html#rsvp" class="hover:text-amber-400">RSVP</a>
+        </nav>
       </div>
     </div>
+  </header>
+  <div class="h-20"></div>
+
+  <!-- HERO -->
+  <section class="relative isolate overflow-hidden">
+    <div class="absolute inset-0 -z-10 bg-center bg-cover"
+         style="background-image:url('BoiseCrossandCapital.jpeg'); background-position:50% 35%;"></div>
+    <div class="absolute inset-0 -z-10 bg-black/40"></div>
+
+    <div class="mx-auto max-w-7xl px-4 py-16 text-center">
+      <h1 class="text-4xl sm:text-5xl font-extrabold drop-shadow">Photos</h1>
+      <p class="mt-4 text-lg sm:text-xl max-w-3xl mx-auto text-white/90">
+        Moments from the God’s Country March. Click any photo to view it larger.
+      </p>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery-section" class="mx-auto max-w-7xl px-4 pb-16">
+    <!-- Controls -->
+    <div class="mb-4 flex items-center justify-between gap-4">
+      <div class="text-sm text-white/70">
+        Tip: add files to <code class="text-amber-300">/photos/</code> and list them in the array below.
+      </div>
+      <div class="flex items-center gap-2 text-xs sm:text-sm">
+        <label class="opacity-80">Sort:</label>
+        <button data-sort="new" class="sort-btn rounded-lg px-3 py-1.5 bg-black/60 ring-1 ring-white/10 hover:bg-black/70">Newest</button>
+        <button data-sort="old" class="sort-btn rounded-lg px-3 py-1.5 bg-black/30 ring-1 ring-white/10 hover:bg-black/40">Oldest</button>
+      </div>
+    </div>
+
+    <!-- Grid -->
+    <div id="gallery"
+         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <!-- JS will render items here -->
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="hidden fixed inset-0 z-50 bg-black/90 items-center justify-center p-4">
+    <button id="lbClose" class="absolute top-4 right-4 rounded-lg px-3 py-1.5 bg-white/10 text-white ring-1 ring-white/30 hover:bg-white/20">
+      Close ✕
+    </button>
+    <button id="lbPrev" class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 rounded-full px-4 py-2 bg-white/10 text-white ring-1 ring-white/30 hover:bg-white/20">
+      ‹
+    </button>
+    <figure class="max-w-[95vw] max-h-[85vh] text-center">
+      <img id="lbImg" alt="" class="max-h-[75vh] max-w-[95vw] object-contain mx-auto" />
+      <figcaption id="lbCap" class="mt-3 text-white/80 text-sm"></figcaption>
+    </figure>
+    <button id="lbNext" class="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 rounded-full px-4 py-2 bg-white/10 text-white ring-1 ring-white/30 hover:bg-white/20">
+      ›
+    </button>
   </div>
-  <div class="text-center text-white/60 text-xs pb-6">
-    © <span id="year"></span> God’s Country March. All rights reserved.
-  </div>
-</footer>
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <!-- FOOTER -->
+  <footer class="bg-black">
+    <div class="mx-auto max-w-7xl px-4 py-10 text-white/80 text-center space-y-2">
+      <p>© <span id="y"></span> God’s Country March • <a href="index.html#donate" class="underline">Support the March</a></p>
+      <p>Questions? <a class="underline" href="mailto:GodsCountryMarch@gmail.com">GodsCountryMarch@gmail.com</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // =========================
+    // 📸 EASY-EDIT PHOTO LIST
+    // =========================
+    // Put image files in /photos/ (or change basePath).
+    // Add new photos by appending to PHOTOS below.
+    // You can use:
+    //   "filename.jpg"
+    // or
+    //   { src: "filename.jpg", alt: "Alt text", caption: "Optional caption", date: "2025-10-14" }
+    //
+    // NOTE: date is optional and only used for sorting (newest/oldest).
+    const basePath = "photos/"; // change to "" if your photos live next to this file
+
+    const PHOTOS = [
+      // ==== EXAMPLES (safe to remove) ====
+      // Existing site image (shows in gallery too):
+      { src: "BoiseCrossandCapital.jpeg", alt: "Cross and Capitol at sunset", caption: "Boise • Capitol & Cross", date: "2025-10-14" },
+      // Add your images below this line. One per row is easiest to edit:
+      // "IMG_0001.jpg",
+      // { src: "IMG_0002.jpg", alt: "Crowd at the steps", caption: "On the Capitol steps" },
+      // "IMG_0003.jpg",
+      // ===================================
+    ];
+
+    // Render gallery
+    const galleryEl = document.getElementById('gallery');
+    const sortBtns = document.querySelectorAll('.sort-btn');
+    let currentSort = 'new';
+    let items = [];
+
+    function normalizeList(list) {
+      return list.map((p, i) => {
+        if (typeof p === 'string') return { src: p, alt: filenameToAlt(p), caption: '', date: '' };
+        return {
+          src: p.src,
+          alt: p.alt || filenameToAlt(p.src),
+          caption: p.caption || '',
+          date: p.date || '',
+          _index: i
+        };
+      });
+    }
+
+    function filenameToAlt(f) {
+      try {
+        const name = f.split('/').pop().split('.').slice(0,-1).join('.');
+        return name.replace(/[-_]/g, ' ').replace(/\s+/g, ' ').trim();
+      } catch { return ''; }
+    }
+
+    function sortItems(arr, mode) {
+      const copy = [...arr];
+      if (mode === 'new') {
+        copy.sort((a,b) => (b.date||'') > (a.date||'') ? 1 : -1);
+      } else {
+        copy.sort((a,b) => (a.date||'') > (b.date||'') ? 1 : -1);
+      }
+      return copy;
+    }
+
+    function render() {
+      galleryEl.innerHTML = '';
+      items.forEach((p, idx) => {
+        // Card with fixed aspect ratio (3:2)
+        const card = document.createElement('figure');
+        card.className = "group relative bg-black/30 ring-1 ring-white/10 rounded-xl overflow-hidden shadow hover:shadow-lg hover:-translate-y-0.5 transition";
+
+        // aspect ratio box
+        const box = document.createElement('div');
+        box.className = "relative pt-[66%]"; // 3:2 ratio
+        const img = document.createElement('img');
+        img.loading = "lazy";
+        img.decoding = "async";
+        img.alt = p.alt || "";
+        img.src = basePath + p.src;
+        img.className = "absolute inset-0 h-full w-full object-cover";
+        img.addEventListener('click', () => openLightbox(idx));
+        box.appendChild(img);
+
+        const cap = document.createElement('figcaption');
+        cap.className = "flex items-center justify-between px-3 py-2 text-xs text-white/80";
+        cap.innerHTML = `
+          <span class="truncate">${p.caption || p.alt || '&nbsp;'}</span>
+          <button class="rounded-lg px-2 py-1 bg-white/10 ring-1 ring-white/20 hover:bg-white/20">View</button>
+        `;
+        cap.querySelector('button').addEventListener('click', () => openLightbox(idx));
+
+        card.appendChild(box);
+        card.appendChild(cap);
+        galleryEl.appendChild(card);
+      });
+    }
+
+    // Lightbox
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    const lbCap = document.getElementById('lbCap');
+    const lbClose = document.getElementById('lbClose');
+    const lbPrev = document.getElementById('lbPrev');
+    const lbNext = document.getElementById('lbNext');
+    let lbIndex = 0;
+
+    function openLightbox(i) {
+      lbIndex = i;
+      const p = items[lbIndex];
+      lbImg.src = basePath + p.src;
+      lbImg.alt = p.alt || "";
+      lbCap.textContent = p.caption || p.alt || "";
+      lb.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      lb.classList.add('hidden');
+      document.body.style.overflow = '';
+      lbImg.src = '';
+    }
+    function showPrev() {
+      lbIndex = (lbIndex - 1 + items.length) % items.length;
+      openLightbox(lbIndex);
+    }
+    function showNext() {
+      lbIndex = (lbIndex + 1) % items.length;
+      openLightbox(lbIndex);
+    }
+
+    lbClose.addEventListener('click', closeLightbox);
+    lbPrev.addEventListener('click', showPrev);
+    lbNext.addEventListener('click', showNext);
+    lb.addEventListener('click', (e) => { if (e.target === lb) closeLightbox(); });
+    window.addEventListener('keydown', (e) => {
+      if (lb.classList.contains('hidden')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showPrev();
+      if (e.key === 'ArrowRight') showNext();
+    });
+
+    // Sorting
+    sortBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentSort = btn.dataset.sort;
+        sortBtns.forEach(b => b.classList.toggle('bg-black/60', b===btn));
+        sortBtns.forEach(b => b.classList.toggle('bg-black/30', b!==btn));
+        items = sortItems(normalizeList(PHOTOS), currentSort);
+        render();
+      });
+    });
+
+    // Initialize
+    items = sortItems(normalizeList(PHOTOS), currentSort);
+    render();
+  </script>
+</body>
+</html>
