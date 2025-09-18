@@ -2,107 +2,213 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mission & Vision — God’s Country March</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#000000" />
+  <title>Mission & Vision • God’s Country March</title>
+
+  <link rel="canonical" href="https://godscountrymarch.com/mission.html" />
+  <meta name="description" content="The Mission & Vision of God’s Country March — a public witness of faith and freedom in Idaho." />
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <meta name="description" content="Mission and vision of the God’s Country March movement."/>
+
+  <!-- Preload hero background -->
+  <link rel="preload" as="image" href="BoiseCrossandCapital.jpeg" />
+
+  <style>
+    html { scroll-behavior: smooth; }
+    section[id] { scroll-margin-top: 96px; }
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #1a202c, #2d3748);
+      color: #fff;
+    }
+    /* iOS notches */
+    header { padding-top: env(safe-area-inset-top); }
+    .mobile-panel-header { padding-top: calc(1rem + env(safe-area-inset-top)); }
+    .mobile-panel-footer { padding-bottom: env(safe-area-inset-bottom); }
+    /* Reduce motion */
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
+  </style>
+
+  <!-- Vercel Analytics / Speed Insights -->
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
 </head>
-<body class="bg-slate-950 text-white">
-  <!-- header -->
-<!-- HEADER (copy into each page) -->
-<header class="fixed top-0 inset-x-0 z-40">
-  <div class="mx-auto max-w-7xl px-4">
-    <div class="mt-4 mb-2 flex items-center justify-between rounded-2xl bg-black/90 text-white backdrop-blur px-4 py-3 shadow-xl ring-1 ring-white/10">
-      <a href="/index.html#home" class="font-black tracking-tight text-lg">God’s Country March</a>
-      <nav class="hidden sm:flex items-center gap-6 text-sm">
-        <a href="/mission.html" class="hover:opacity-90">Mission & Vision</a>
-        <a href="/founder.html" class="hover:opacity-90">Meet the Founder</a>
-        <a href="/gallery.html" class="hover:opacity-90">Photos</a>
-        <a href="/blog.html" class="hover:opacity-90">Blog</a>
-        <a href="/volunteer.html" class="hover:opacity-90">Volunteer</a>
+<body class="text-white">
+  <!-- NAV -->
+  <header class="fixed top-0 inset-x-0 z-40">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="mt-4 mb-2 flex items-center justify-between rounded-2xl bg-black/90 text-white backdrop-blur px-4 py-3 shadow-xl ring-1 ring-white/10">
+        <a href="index.html" class="font-black tracking-tight text-lg">God’s Country March</a>
+
+        <!-- Desktop nav -->
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="mission.html" class="hover:opacity-90 underline">Mission &amp; Vision</a>
+          <a href="sponsors.html" class="hover:opacity-90">Sponsors &amp; Supporters</a>
+          <a href="gallery.html" class="hover:opacity-90">Photos</a>
+          <a href="blog.html" class="hover:opacity-90">Blog</a>
+          <a href="volunteer.html" class="hover:opacity-90">Volunteer</a>
+          <a href="donate.html" class="hover:opacity-90">Donate</a>
+        </nav>
+
+        <a href="index.html#rsvp" class="hidden md:inline-flex items-center justify-center px-4 py-2 text-sm font-semibold rounded-2xl shadow hover:shadow-lg transition active:scale-[.99] bg-white text-slate-900">RSVP</a>
+
+        <!-- Mobile hamburger -->
+        <button
+          id="menuBtn"
+          class="md:hidden inline-flex items-center justify-center rounded-xl p-3 ring-1 ring-white/15 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/30"
+          aria-controls="mobileMenu"
+          aria-expanded="false">
+          <span class="sr-only">Open menu</span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="h-24"></div>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="fixed inset-0 z-50 hidden md:hidden" aria-hidden="true">
+    <div id="menuBackdrop" class="absolute inset-0 bg-black/60"></div>
+    <div class="ml-auto h-full w-80 max-w-[85vw] bg-slate-900 text-white shadow-2xl ring-1 ring-white/10 flex flex-col">
+      <div class="p-4 mobile-panel-header flex items-center justify-between border-b border-white/10">
+        <span class="font-semibold">Menu</span>
+        <button id="menuClose" class="rounded-lg p-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/30" aria-label="Close menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <nav class="px-4 py-4 space-y-1 text-sm">
+        <a href="mission.html" class="block rounded-lg px-3 py-2 hover:bg-white/10">Mission &amp; Vision</a>
+        <a href="sponsors.html" class="block rounded-lg px-3 py-2 hover:bg-white/10">Sponsors &amp; Supporters</a>
+        <a href="gallery.html" class="block rounded-lg px-3 py-2 hover:bg-white/10">Photos</a>
+        <a href="blog.html" class="block rounded-lg px-3 py-2 hover:bg-white/10">Blog</a>
+        <a href="volunteer.html" class="block rounded-lg px-3 py-2 hover:bg-white/10">Volunteer</a>
+        <a href="donate.html" class="block rounded-lg px-3 py-2 hover:bg-white/10">Donate</a>
+        <div class="pt-3 mobile-panel-footer">
+          <a href="index.html#rsvp" class="inline-flex w-full items-center justify-center px-4 py-2 text-sm font-semibold rounded-2xl bg-white text-slate-900">RSVP</a>
+        </div>
       </nav>
-      <a href="/index.html#rsvp" class="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold rounded-2xl shadow bg-white text-slate-900 hover:shadow-lg">
-        RSVP
-      </a>
     </div>
   </div>
-</header>
-<div class="pt-24"></div> <!-- spacer so content clears the fixed header -->
 
-  <section class="mx-auto max-w-7xl px-4 py-16">
-    <h1 class="text-4xl sm:text-5xl font-extrabold drop-shadow-md">Mission & Vision</h1>
-    <p class="mt-4 max-w-3xl text-lg text-white/90">
-      We exist to publicly honor Christ, celebrate the freedoms God has given our nation, and serve families in Idaho through prayer, outreach, and discipleship.
-    </p>
+  <!-- HERO -->
+  <section class="relative isolate pt-24 overflow-hidden">
+    <div class="absolute inset-0 -z-10 bg-center bg-cover" style="background-image:url('BoiseCrossandCapital.jpeg'); background-position:50% 35%;"></div>
+    <div class="absolute inset-0 -z-10 bg-black/40"></div>
 
-    <div class="mt-10 grid sm:grid-cols-3 gap-4">
-      <div class="rounded-2xl bg-black/70 p-5 ring-1 ring-white/20 shadow">
-        <p class="text-sm font-semibold opacity-80">Faith</p>
-        <p class="mt-1">Prayer, worship, and public witness to Christ.</p>
-      </div>
-      <div class="rounded-2xl bg-black/70 p-5 ring-1 ring-white/20 shadow">
-        <p class="text-sm font-semibold opacity-80">Freedom</p>
-        <p class="mt-1">Thanking God for our liberties and stewarding them well.</p>
-      </div>
-      <div class="rounded-2xl bg-black/70 p-5 ring-1 ring-white/20 shadow">
-        <p class="text-sm font-semibold opacity-80">Community</p>
-        <p class="mt-1">Serving neighbors across Idaho in practical ways.</p>
-      </div>
+    <div class="mx-auto max-w-5xl px-4 py-20 text-center">
+      <h1 class="text-4xl sm:text-5xl font-extrabold drop-shadow">Mission &amp; Vision</h1>
+      <p class="mt-4 text-lg sm:text-xl max-w-3xl mx-auto text-white/90">
+        Uniting Idaho in faith, freedom, and community.
+      </p>
     </div>
+  </section>
 
-    <div class="mt-12 grid md:grid-cols-2 gap-6">
-      <div class="rounded-2xl bg-white text-slate-900 p-6 shadow-sm">
-        <h2 class="font-bold text-xl">Our Approach</h2>
-        <ul class="mt-3 list-disc pl-5 space-y-2 text-slate-700">
-          <li>Peaceful, prayerful gatherings that unify across differences</li>
-          <li>Ongoing outreach: food drives, support for families, prayer nights</li>
-          <li>Discipleship resources, workshops, and small groups</li>
-          <li>Partnerships with local churches and community leaders</li>
-        </ul>
-      </div>
-      <div class="rounded-2xl bg-white text-slate-900 p-6 shadow-sm">
-        <h2 class="font-bold text-xl">What’s Next</h2>
-        <ul class="mt-3 list-disc pl-5 space-y-2 text-slate-700">
-          <li>Regular prayer gatherings in multiple Idaho cities</li>
-          <li>Seasonal outreach events to meet community needs</li>
-          <li>Training for local teams to organize and serve</li>
-          <li>Statewide day of faith and service</li>
-        </ul>
+  <!-- MISSION -->
+  <section id="mission" class="bg-white text-slate-900">
+    <div class="mx-auto max-w-5xl px-4 py-14">
+      <h2 class="text-2xl sm:text-3xl font-bold">Our Mission</h2>
+      <p class="mt-4 text-lg leading-relaxed text-slate-700">
+        We march because silence is surrender. God’s Country March is a declaration that Christ is not a tame Sunday service,
+        but the living King who overturns corruption, confronts sin, and calls His people to rise. Our mission is to link arms,
+        lift our voices, and show a watching world that faith is not hiding in the shadows — it’s alive, loud, and unshaken.
+      </p>
+
+      <!-- Optional pull-quote style -->
+      <blockquote class="mt-8 rounded-2xl bg-slate-100 p-6 text-slate-800 ring-1 ring-slate-200">
+        <span class="block text-sm font-semibold tracking-wide text-slate-600">Declaration</span>
+        <span class="mt-1 block text-xl font-bold">“Faith is not hiding in the shadows — it’s alive, loud, and unshaken.”</span>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- VISION -->
+  <section id="vision" class="bg-gradient-to-b from-slate-100 to-white text-slate-900">
+    <div class="mx-auto max-w-5xl px-4 py-14">
+      <h2 class="text-2xl sm:text-3xl font-bold">Our Vision</h2>
+      <p class="mt-4 text-lg leading-relaxed text-slate-700">
+        We see a Church that refuses to bow to culture or fear, but stands in bold defiance with the same fire that drove Jesus to flip tables.
+        God’s Country March is the spark of a movement where believers walk unashamed through the streets, declaring revival and truth.
+        Our vision is a generation awakened, a nation stirred, and a faith so fierce it can’t be silenced.
+      </p>
+
+      <!-- Pillars (kept consistent with homepage) -->
+      <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="rounded-2xl bg-white p-6 shadow-md hover:shadow-lg transition ring-1 ring-slate-200">
+          <h3 class="font-semibold text-slate-900 mb-2">Faith</h3>
+          <p class="text-slate-600 text-sm">Prayer, worship, and public witness to Christ.</p>
+        </div>
+        <div class="rounded-2xl bg-white p-6 shadow-md hover:shadow-lg transition ring-1 ring-slate-200">
+          <h3 class="font-semibold text-slate-900 mb-2">Freedom</h3>
+          <p class="text-slate-600 text-sm">Celebrating the freedoms God has given our nation.</p>
+        </div>
+        <div class="rounded-2xl bg-white p-6 shadow-md hover:shadow-lg transition ring-1 ring-slate-200">
+          <h3 class="font-semibold text-slate-900 mb-2">Community</h3>
+          <p class="text-slate-600 text-sm">Serving families and neighbors across Idaho.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- footer -->
-</body>
-  <!-- FOOTER (copy into each page) -->
-<footer class="bg-black/95 text-white mt-20">
-  <div class="mx-auto max-w-7xl px-4 py-12 grid sm:grid-cols-3 gap-8">
-    <div>
-      <p class="font-semibold">God’s Country March</p>
-      <p class="text-white/70 mt-2 text-sm">Idaho • A movement of faith, freedom, and community.</p>
+  <!-- CTA -->
+  <section class="py-16 text-center bg-gray-900 text-white">
+    <h2 class="text-3xl font-extrabold drop-shadow-md">Stand With Us</h2>
+    <p class="mt-4 text-lg max-w-2xl mx-auto text-gray-300">
+      Be part of the movement. Bring friends, family, and your voice.
+    </p>
+    <div class="mt-8 flex flex-wrap gap-3 justify-center">
+      <a href="index.html#rsvp" class="inline-flex items-center px-6 py-3 text-lg font-semibold bg-white text-slate-900 rounded-2xl shadow hover:shadow-lg">RSVP</a>
+      <a href="volunteer.html" class="inline-flex items-center px-6 py-3 text-lg font-semibold bg-black/70 border border-white/20 rounded-2xl shadow hover:shadow-lg">Volunteer</a>
+      <a href="donate.html" class="inline-flex items-center px-6 py-3 text-lg font-semibold bg-black rounded-2xl shadow hover:bg-yellow-500 hover:text-black">Donate</a>
     </div>
-    <div>
-      <p class="font-semibold">Contact</p>
-      <p class="text-white/70 mt-2 text-sm">
-        info@godscountrymarch.org
-      </p>
-    </div>
-    <div>
-      <p class="font-semibold">Links</p>
-      <div class="mt-2 flex flex-col text-sm text-white/80 gap-1">
-        <a href="/mission.html" class="hover:text-white">Mission & Vision</a>
-        <a href="/founder.html" class="hover:text-white">Meet the Founder</a>
-        <a href="/gallery.html" class="hover:text-white">Photos</a>
-        <a href="/blog.html" class="hover:text-white">Blog</a>
-        <a href="/volunteer.html" class="hover:text-white">Volunteer</a>
-      </div>
-    </div>
-  </div>
-  <div class="text-center text-white/60 text-xs pb-6">
-    © <span id="year"></span> God’s Country March. All rights reserved.
-  </div>
-</footer>
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </section>
 
+  <!-- FOOTER -->
+  <footer class="bg-black">
+    <div class="mx-auto max-w-7xl px-4 py-10 text-white/80 text-center space-y-2">
+      <p>© <span id="y"></span> God’s Country March • <a href="index.html#donate" class="underline">Support the March</a></p>
+      <p>Questions? <a class="underline" href="mailto:GodsCountryMarch@gmail.com">GodsCountryMarch@gmail.com</a></p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Footer year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuBackdrop = document.getElementById('menuBackdrop');
+    const menuClose = document.getElementById('menuClose');
+
+    const openMenu = () => {
+      mobileMenu.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      menuBtn.setAttribute('aria-expanded', 'true');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+    };
+
+    const closeMenu = () => {
+      mobileMenu.classList.add('hidden');
+      document.body.style.overflow = '';
+      menuBtn.setAttribute('aria-expanded', 'false');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+    };
+
+    menuBtn?.addEventListener('click', openMenu);
+    menuClose?.addEventListener('click', closeMenu);
+    menuBackdrop?.addEventListener('click', closeMenu);
+    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  </script>
+</body>
 </html>
 
