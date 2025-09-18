@@ -12,7 +12,7 @@
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Hero/Background asset (optional) -->
+  <!-- Background asset (optional) -->
   <link rel="preload" as="image" href="BoiseCrossandCapital.jpeg" />
 
   <style>
@@ -78,16 +78,11 @@
 
   <!-- GALLERY -->
   <section id="gallery-section" class="mx-auto max-w-7xl px-4 pb-16">
-    <!-- Controls -->
-    <div class="mb-4 flex items-center justify-between gap-4">
-      <div class="text-sm text-white/70">
-        Tip: add files to <code class="text-amber-300">/photos/</code> and list them in the array below.
-      </div>
-      <div class="flex items-center gap-2 text-xs sm:text-sm">
-        <label class="opacity-80">Sort:</label>
-        <button data-sort="new" class="sort-btn rounded-lg px-3 py-1.5 bg-black/60 ring-1 ring-white/10 hover:bg-black/70">Newest</button>
-        <button data-sort="old" class="sort-btn rounded-lg px-3 py-1.5 bg-black/30 ring-1 ring-white/10 hover:bg-black/40">Oldest</button>
-      </div>
+    <!-- Controls (Tip removed) -->
+    <div class="mb-4 flex items-center justify-end gap-2 text-xs sm:text-sm">
+      <span class="opacity-80">Sort:</span>
+      <button data-sort="new" class="sort-btn rounded-lg px-3 py-1.5 bg-black/60 ring-1 ring-white/10 hover:bg-black/70">Newest</button>
+      <button data-sort="old" class="sort-btn rounded-lg px-3 py-1.5 bg-black/30 ring-1 ring-white/10 hover:bg-black/40">Oldest</button>
     </div>
 
     <!-- Grid -->
@@ -134,20 +129,16 @@
     // You can use:
     //   "filename.jpg"
     // or
-    //   { src: "filename.jpg", alt: "Alt text", caption: "Optional caption", date: "2025-10-14" }
+    //   { src: "filename.jpg", alt: "Alt text", caption: "Optional caption", date: "YYYY-MM-DD" }
     //
-    // NOTE: date is optional and only used for sorting (newest/oldest).
+    // NOTE: 'date' is optional and only used for sorting.
     const basePath = "photos/"; // change to "" if your photos live next to this file
 
     const PHOTOS = [
-      // ==== EXAMPLES (safe to remove) ====
-      // Existing site image (shows in gallery too):
-      { src: "BoiseCrossandCapital.jpeg", alt: "Cross and Capitol at sunset", caption: "Boise • Capitol & Cross", date: "2025-10-14" },
-      // Add your images below this line. One per row is easiest to edit:
+      // Add your images here, e.g.:
       // "IMG_0001.jpg",
-      // { src: "IMG_0002.jpg", alt: "Crowd at the steps", caption: "On the Capitol steps" },
+      // { src: "IMG_0002.jpg", alt: "Crowd at the steps", caption: "On the Capitol steps", date: "2025-10-14" },
       // "IMG_0003.jpg",
-      // ===================================
     ];
 
     // Render gallery
@@ -235,10 +226,12 @@
       lbImg.alt = p.alt || "";
       lbCap.textContent = p.caption || p.alt || "";
       lb.classList.remove('hidden');
+      lb.classList.add('flex');
       document.body.style.overflow = 'hidden';
     }
     function closeLightbox() {
       lb.classList.add('hidden');
+      lb.classList.remove('flex');
       document.body.style.overflow = '';
       lbImg.src = '';
     }
