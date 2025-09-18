@@ -7,155 +7,64 @@
   <title>Mission & Vision • God’s Country March</title>
 
   <link rel="canonical" href="https://godscountrymarch.com/mission.html" />
-  <meta name="description" content="The Mission & Vision of God’s Country March — a public witness of faith and freedom in Idaho." />
+  <meta name="description" content="Mission and Vision of the God’s Country March." />
 
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Background -->
   <link rel="preload" as="image" href="BoiseCrossandCapital.jpeg" />
 
   <style>
     html { scroll-behavior: smooth; }
     section[id] { scroll-margin-top: 96px; }
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #1a202c, #2d3748);
-      color: #fff;
-    }
+    body { background: linear-gradient(to right, #1a202c, #2d3748); color:#fff; font-family: Arial, sans-serif; }
     header { padding-top: env(safe-area-inset-top); }
-    @media (prefers-reduced-motion: reduce) { *{animation:none!important;transition:none!important;} }
+    /* Consistent word-strip nav */
+    .nav-words a { text-decoration: none; }
+    .nav-words a.active { text-decoration: underline; }
+    @media (prefers-reduced-motion: reduce){ *{animation:none!important;transition:none!important;} }
   </style>
 
-  <!-- (optional) Vercel Analytics -->
+  <!-- Optional: Vercel Analytics -->
   <script defer src="/_vercel/insights/script.js"></script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
 </head>
 <body class="text-white">
-  <!-- WORD-STRIP NAV -->
+
+  <!-- WORD-STRIP NAV (identical across site) -->
   <header class="fixed top-0 inset-x-0 z-50">
     <div class="mx-auto max-w-7xl px-4">
-      <div class="mt-3 mb-2 flex items-center justify-between rounded-2xl bg-black/70 backdrop-blur text-white shadow ring-1 ring-white/10 px-3 sm:px-4 py-2">
-        <a href="index.html" class="font-semibold hover:text-amber-400">God’s Country March</a>
-        <nav class="flex flex-wrap items-center gap-x-4 gap-y-1 text-[13px] sm:text-sm">
-          <a href="mission.html" class="hover:text-amber-400 underline">Mission &amp; Vision</a>
+      <div class="mt-3 mb-2 flex justify-center">
+        <nav class="nav-words w-full rounded-2xl bg-black/70 backdrop-blur text-white shadow ring-1 ring-white/10
+                    px-3 sm:px-4 py-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[13px] sm:text-sm">
+          <a href="index.html" class="font-semibold hover:text-amber-400">God’s Country March</a>
+          <span class="hidden sm:inline opacity-40">•</span>
+          <a href="mission.html" class="hover:text-amber-400 active">Mission &amp; Vision</a>
+          <span class="hidden sm:inline opacity-40">•</span>
           <a href="sponsors.html" class="hover:text-amber-400">Sponsors &amp; Supporters</a>
+          <span class="hidden sm:inline opacity-40">•</span>
           <a href="gallery.html" class="hover:text-amber-400">Photos</a>
+          <span class="hidden sm:inline opacity-40">•</span>
           <a href="blog.html" class="hover:text-amber-400">Blog</a>
+          <span class="hidden sm:inline opacity-40">•</span>
           <a href="volunteer.html" class="hover:text-amber-400">Volunteer</a>
-          <a href="donate.html" class="hover:text-amber-400">Donate</a>
+          <span class="hidden sm:inline opacity-40">•</span>
+          <a href="https://donorbox.org/2025-gods-country-march" target="_blank" rel="noopener" class="hover:text-amber-400">Donate</a>
+          <span class="hidden sm:inline opacity-40">•</span>
+          <a href="index.html#rsvp" class="hover:text-amber-400">RSVP</a>
         </nav>
-        <a href="index.html#rsvp"
-           class="hidden xs:inline-flex items-center rounded-xl bg-white text-slate-900 px-3 py-1.5 text-sm font-semibold shadow hover:shadow-lg">
-          RSVP
-        </a>
       </div>
     </div>
   </header>
   <div class="h-20"></div>
 
   <!-- HERO -->
-  <section class="relative isolate pt-24 overflow-hidden">
-    <div class="absolute inset-0 -z-10 bg-center bg-cover" style="background-image:url('BoiseCrossandCapital.jpeg'); background-position:50% 35%;"></div>
+  <section class="relative isolate overflow-hidden">
+    <div class="absolute inset-0 -z-10 bg-center bg-cover"
+         style="background-image:url('BoiseCrossandCapital.jpeg'); background-position:50% 35%;"></div>
     <div class="absolute inset-0 -z-10 bg-black/40"></div>
 
-    <div class="mx-auto max-w-5xl px-4 py-20 text-center">
+    <div class="mx-auto max-w-7xl px-4 py-16 text-center">
       <h1 class="text-4xl sm:text-5xl font-extrabold drop-shadow">Mission &amp; Vision</h1>
-      <p class="mt-4 text-lg sm:text-xl max-w-3xl mx-auto text-white/90">
-        Uniting Idaho in faith, freedom, and community.
-      </p>
-    </div>
-  </section>
-
-  <!-- MISSION (centered + pop) -->
-  <section id="mission" class="relative bg-white text-slate-900">
-    <!-- subtle radial glow behind the card -->
-    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(253,230,138,.25),transparent_60%)]"></div>
-
-    <div class="relative mx-auto max-w-5xl px-4 py-16">
-      <div class="text-center">
-        <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 drop-shadow-sm">
-          Our Mission
-        </h2>
-        <span class="mt-3 mx-auto block h-1 w-20 rounded-full bg-amber-400"></span>
-
-        <p class="mt-6 text-xl leading-8 text-slate-700">
-          We march because silence is surrender. God’s Country March is a declaration that Christ is not a tame Sunday service,
-          but the living King who overturns corruption, confronts sin, and calls His people to rise. Our mission is to link arms,
-          lift our voices, and show a watching world that faith is not hiding in the shadows — it’s alive, loud, and unshaken.
-        </p>
-
-        <blockquote
-          class="mt-8 mx-auto max-w-3xl rounded-2xl bg-slate-100 p-6 text-slate-800 ring-1 ring-slate-200 shadow-sm">
-          <span class="block text-sm font-semibold tracking-wide text-slate-600">Declaration</span>
-          <span class="mt-2 block text-2xl font-bold">
-            “Faith is not hiding in the shadows — it’s alive, loud, and unshaken.”
-          </span>
-        </blockquote>
-      </div>
-    </div>
-  </section>
-
-  <!-- VISION (centered + pop) -->
-  <section id="vision" class="relative bg-gradient-to-b from-slate-100 to-white text-slate-900">
-    <!-- subtle radial glow behind the card -->
-    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(148,163,184,.25),transparent_60%)]"></div>
-
-    <div class="relative mx-auto max-w-5xl px-4 py-16">
-      <div class="text-center">
-        <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 drop-shadow-sm">
-          Our Vision
-        </h2>
-        <span class="mt-3 mx-auto block h-1 w-20 rounded-full bg-amber-400"></span>
-
-        <p class="mt-6 text-xl leading-8 text-slate-700">
-          We see a Church that refuses to bow to culture or fear, but stands in bold defiance with the same fire that drove Jesus to flip tables.
-          God’s Country March is the spark of a movement where believers walk unashamed through the streets, declaring revival and truth.
-          Our vision is a generation awakened, a nation stirred, and a faith so fierce it can’t be silenced.
-        </p>
-
-        <!-- Pillars -->
-        <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-5">
-          <div class="rounded-2xl bg-white p-6 ring-1 ring-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition">
-            <h3 class="font-semibold text-slate-900 mb-2">Faith</h3>
-            <p class="text-slate-600 text-sm">Prayer, worship, and public witness to Christ.</p>
-          </div>
-          <div class="rounded-2xl bg-white p-6 ring-1 ring-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition">
-            <h3 class="font-semibold text-slate-900 mb-2">Freedom</h3>
-            <p class="text-slate-600 text-sm">Celebrating the freedoms God has given our nation.</p>
-          </div>
-          <div class="rounded-2xl bg-white p-6 ring-1 ring-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition">
-            <h3 class="font-semibold text-slate-900 mb-2">Community</h3>
-            <p class="text-slate-600 text-sm">Serving families and neighbors across Idaho.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="py-16 text-center bg-gray-900 text-white">
-    <h2 class="text-3xl font-extrabold drop-shadow-md">Stand With Us</h2>
-    <p class="mt-4 text-lg max-w-2xl mx-auto text-gray-300">
-      Be part of the movement. Bring friends, family, and your voice.
-    </p>
-    <div class="mt-8 flex flex-wrap gap-3 justify-center">
-      <a href="index.html#rsvp" class="inline-flex items-center px-6 py-3 text-lg font-semibold bg-white text-slate-900 rounded-2xl shadow hover:shadow-lg">RSVP</a>
-      <a href="volunteer.html" class="inline-flex items-center px-6 py-3 text-lg font-semibold bg-black/70 border border-white/20 rounded-2xl shadow hover:shadow-lg">Volunteer</a>
-      <a href="https://donorbox.org/2025-gods-country-march" target="_blank" rel="noopener"
-         class="inline-flex items-center px-6 py-3 text-lg font-semibold bg-black rounded-2xl shadow hover:bg-yellow-500 hover:text-black">
-        Donate
-      </a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="bg-black">
-    <div class="mx-auto max-w-7xl px-4 py-10 text-white/80 text-center space-y-2">
-      <p>© <span id="y"></span> God’s Country March • <a href="index.html#donate" class="underline">Support the March</a></p>
-      <p>Questions? <a class="underline" href="mailto:GodsCountryMarch@gmail.com">GodsCountryMarch@gmail.com</a></p>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+      <p class="mt-4 text-lg sm:t
