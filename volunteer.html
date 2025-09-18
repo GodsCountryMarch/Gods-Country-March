@@ -87,7 +87,7 @@
       </div>
       <div class="rounded-2xl bg-black/40 ring-1 ring-white/10 p-5">
         <h3 class="font-semibold">Peacekeepers</h3>
-        <p class="mt-1 text-white/80 text-sm">Calm, friendly volunteers who help with directions and crowd flow. </p>
+        <p class="mt-1 text-white/80 text-sm">Calm, friendly volunteers who help with directions and crowd flow.</p>
       </div>
       <div class="rounded-2xl bg-black/40 ring-1 ring-white/10 p-5">
         <h3 class="font-semibold">Media &amp; Content</h3>
@@ -119,31 +119,43 @@
         <input type="hidden" name="_subject" value="Volunteer Signup — God’s Country March" />
         <input type="hidden" name="form_name" value="volunteer" />
 
-        <!-- Contact -->
+        <!-- Contact (updated) -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label class="text-sm opacity-80">Full Name *</label>
-            <input required name="name" type="text" placeholder="First & Last"
+            <label class="text-sm opacity-80">First Name *</label>
+            <input required name="first_name" type="text" placeholder="First"
                    class="mt-1 w-full rounded-xl bg-white text-slate-900 px-3 py-2 ring-2 ring-transparent focus:ring-amber-400/60" />
           </div>
           <div>
-            <label class="text-sm opacity-80">Email *</label>
-            <input required name="email" type="email" placeholder="you@email.com"
+            <label class="text-sm opacity-80">Last Name *</label>
+            <input required name="last_name" type="text" placeholder="Last"
                    class="mt-1 w-full rounded-xl bg-white text-slate-900 px-3 py-2 ring-2 ring-transparent focus:ring-amber-400/60" />
           </div>
-          <div>
-            <label class="text-sm opacity-80">Phone (optional)</label>
-            <input name="phone" type="tel" placeholder="(555) 555-5555"
+
+          <!-- Email (shown when Email is the preferred contact) -->
+          <div id="emailWrap" class="sm:col-span-1">
+            <label class="text-sm opacity-80">Email Address *</label>
+            <input id="emailInput" name="email" type="email" placeholder="you@email.com"
                    class="mt-1 w-full rounded-xl bg-white text-slate-900 px-3 py-2 ring-2 ring-transparent focus:ring-amber-400/60" />
           </div>
-          <div>
+
+          <!-- Phone (shown when Text or Phone Call is preferred) -->
+          <div id="phoneWrap" class="sm:col-span-1 hidden">
+            <label class="text-sm opacity-80">Phone Number *</label>
+            <input id="phoneInput" name="phone" type="tel" inputmode="tel" placeholder="(555) 555-5555"
+                   class="mt-1 w-full rounded-xl bg-white text-slate-900 px-3 py-2 ring-2 ring-transparent focus:ring-amber-400/60" />
+          </div>
+
+          <!-- Preferred Contact -->
+          <div class="sm:col-span-2">
             <label class="text-sm opacity-80">Preferred Contact</label>
-            <select name="preferred_contact"
-                    class="mt-1 w-full rounded-xl bg-white text-slate-900 px-3 py-2 ring-2 ring-transparent focus:ring-amber-400/60">
-              <option>Email</option>
-              <option>Text</option>
-              <option>Phone Call</option>
+            <select id="prefContact" name="preferred_contact"
+                    class="mt-1 w-full sm:w-60 rounded-xl bg-white text-slate-900 px-3 py-2 ring-2 ring-transparent focus:ring-amber-400/60">
+              <option value="Email" selected>Email</option>
+              <option value="Text">Text</option>
+              <option value="Phone Call">Phone Call</option>
             </select>
+            <p id="contactHelp" class="mt-1 text-xs opacity-70">We’ll use your email address to reach you.</p>
           </div>
         </div>
 
@@ -211,7 +223,7 @@
           <label class="flex items-start gap-2">
             <input required type="checkbox" name="agree" value="yes" class="mt-1" />
             <span>
-              I agree to follow event leadership for safety and logistics. I agree to maintain professionalism and to follow any lawful direction by local law enforcement. 
+              I agree to a peaceful, family-friendly standard and will follow event leadership for safety and logistics.
             </span>
           </label>
           <p class="mt-2 opacity-80">Your info is used only for event coordination. We won’t share or sell your data.</p>
@@ -239,7 +251,40 @@
   </footer>
 
   <script>
+    // Footer year
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Preferred Contact toggling
+    const pref = document.getElementById('prefContact');
+    const emailWrap = document.getElementById('emailWrap');
+    const phoneWrap = document.getElementById('phoneWrap');
+    const emailInput = document.getElementById('emailInput');
+    const phoneInput = document.getElementById('phoneInput');
+    const help = document.getElementById('contactHelp');
+
+    function applyContactMode() {
+      const mode = pref.value;
+      if (mode === 'Email') {
+        // Show Email, hide Phone
+        emailWrap.classList.remove('hidden');
+        phoneWrap.classList.add('hidden');
+        emailInput.required = true;
+        phoneInput.required = false;
+        help.textContent = "We’ll use your email address to reach you.";
+      } else {
+        // Show Phone, hide Email
+        phoneWrap.classList.remove('hidden');
+        emailWrap.classList.add('hidden');
+        phoneInput.required = true;
+        emailInput.required = false;
+        help.textContent = mode === 'Text'
+          ? "We’ll text the phone number you provide."
+          : "We’ll call the phone number you provide.";
+      }
+    }
+    pref.addEventListener('change', applyContactMode);
+    // Set initial state
+    applyContactMode();
   </script>
 </body>
 </html>
