@@ -21,20 +21,19 @@
     body{ font-family: Arial, sans-serif; color:#fff; background:linear-gradient(to right,#1a202c,#2d3748); }
     header{ padding-top: env(safe-area-inset-top); }
 
-    /* Consistent word-strip nav across site */
+    /* Consistent word-strip nav */
     .nav-words a{ text-decoration:none; }
     .nav-words a.active{ text-decoration:underline; }
 
-  /* HERO title: single line, scaled but capped smaller */
-.hero-title{
-  white-space: nowrap;        /* keep one line */
-  letter-spacing: .02em;
-  line-height: .95;
-  font-weight: 900;
-  /* smaller cap + gentler scaling */
-  font-size: clamp(2.25rem, 7vw, 6.25rem);
-  text-shadow: 0 2px 10px rgba(0,0,0,.45);
-}
+    /* HERO title: one line, balanced size */
+    .hero-title{
+      white-space: nowrap;        /* keep one line */
+      letter-spacing: .02em;
+      line-height: .95;
+      font-weight: 900;
+      font-size: clamp(2.25rem, 7vw, 6.25rem); /* tuned down so it's not too big */
+      text-shadow: 0 2px 10px rgba(0,0,0,.45);
+    }
 
     /* Larger event pill */
     .event-pill{
@@ -93,11 +92,11 @@
     <!-- Slight dark overlay -->
     <div class="absolute inset-0 -z-10 bg-black/40"></div>
 
-    <div class="mx-auto max-w-7xl px-4 pt-24 pb-18 text-center">
+    <div class="mx-auto max-w-7xl px-4 pt-24 pb-32 md:pb-40 text-center">
       <!-- Big one-line title -->
       <h1 class="hero-title">GOD’S COUNTRY MARCH</h1>
 
-      <!-- Tagline below -->
+      <!-- Tagline -->
       <p class="mt-4 text-sm sm:text-base tracking-wide text-white/90">
         Uniting Idaho in faith, freedom, and community
       </p>
@@ -108,7 +107,7 @@
         Tue, Oct 14, 2025 • 6:00 PM • Idaho State Capitol Steps
       </a>
 
-      <!-- Updated description -->
+      <!-- Lead -->
       <p class="mt-6 text-lg sm:text-xl max-w-4xl mx-auto opacity-95 leading-relaxed">
         Idaho’s first God’s Country March. Let’s make Idaho the leader in what a God-centered
         country looks like. Honor the mission that Charlie started. Add your voice to the Capitol
@@ -116,8 +115,8 @@
         to silence us.
       </p>
 
-      <!-- Dual CTAs -->
-      <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <!-- CTAs with extra bottom margin -->
+      <div class="mt-8 mb-16 sm:mb-20 lg:mb-24 flex flex-wrap justify-center gap-3">
         <a href="#rsvp"
            class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-2xl
                   shadow hover:shadow-lg transition active:scale-[.99] bg-white text-slate-900">
