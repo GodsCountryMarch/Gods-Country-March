@@ -1,49 +1,245 @@
-<!-- HEADER (copy into each page) -->
-<header class="fixed top-0 inset-x-0 z-40">
-  <div class="mx-auto max-w-7xl px-4">
-    <div class="mt-4 mb-2 flex items-center justify-between rounded-2xl bg-black/90 text-white backdrop-blur px-4 py-3 shadow-xl ring-1 ring-white/10">
-      <a href="/index.html#home" class="font-black tracking-tight text-lg">God’s Country March</a>
-      <nav class="hidden sm:flex items-center gap-6 text-sm">
-        <a href="/mission.html" class="hover:opacity-90">Mission & Vision</a>
-        <a href="/founder.html" class="hover:opacity-90">Meet the Founder</a>
-        <a href="/gallery.html" class="hover:opacity-90">Photos</a>
-        <a href="/blog.html" class="hover:opacity-90">Blog</a>
-        <a href="/volunteer.html" class="hover:opacity-90">Volunteer</a>
-      </nav>
-      <a href="/index.html#rsvp" class="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold rounded-2xl shadow bg-white text-slate-900 hover:shadow-lg">
-        RSVP
-      </a>
-    </div>
-  </div>
-</header>
-<div class="pt-24"></div> <!-- spacer so content clears the fixed header -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#000000" />
+  <title>Volunteer • God’s Country March</title>
 
-<!-- FOOTER (copy into each page) -->
-<footer class="bg-black/95 text-white mt-20">
-  <div class="mx-auto max-w-7xl px-4 py-12 grid sm:grid-cols-3 gap-8">
-    <div>
-      <p class="font-semibold">God’s Country March</p>
-      <p class="text-white/70 mt-2 text-sm">Idaho • A movement of faith, freedom, and community.</p>
-    </div>
-    <div>
-      <p class="font-semibold">Contact</p>
-      <p class="text-white/70 mt-2 text-sm">
-        info@godscountrymarch.org
-      </p>
-    </div>
-    <div>
-      <p class="font-semibold">Links</p>
-      <div class="mt-2 flex flex-col text-sm text-white/80 gap-1">
-        <a href="/mission.html" class="hover:text-white">Mission & Vision</a>
-        <a href="/founder.html" class="hover:text-white">Meet the Founder</a>
-        <a href="/gallery.html" class="hover:text-white">Photos</a>
-        <a href="/blog.html" class="hover:text-white">Blog</a>
-        <a href="/volunteer.html" class="hover:text-white">Volunteer</a>
+  <link rel="canonical" href="https://godscountrymarch.com/volunteer.html" />
+  <meta name="description" content="Volunteer with God’s Country March — help with prayer, outreach, logistics, first aid, media, hospitality, and more." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preload" as="image" href="BoiseCrossandCapital.jpeg" />
+
+  <style>
+    html { scroll-behavior: smooth; }
+    section[id] { scroll-margin-top: 96px; }
+    body { font-family: Arial, sans-serif; background: linear-gradient(to right, #1a202c, #2d3748); color:#fff; }
+    header { padding-top: env(safe-area-inset-top); }
+    .nav-words a { text-decoration: none; }
+    .nav-words a:hover { text-decoration: underline; }
+    @media (prefers-reduced-motion: reduce){ *{animation:none!important;transition:none!important;} }
+  </style>
+
+  <!-- Optional: Vercel Analytics -->
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+<body class="text-white">
+
+  <!-- WORD-STRIP NAV -->
+  <header class="fixed top-0 inset-x-0 z-50">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="mt-3 mb-2 flex justify-center">
+        <nav class="nav-words w-full rounded-2xl bg-black/70 backdrop-blur text-white shadow ring-1 ring-white/10
+                    px-3 sm:px-4 py-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[13px] sm:text-sm">
+          <a href="index.html" class="font-semibold hover:text-amber-400">God’s Country March</a>
+          <span class="hidden sm:inline opacity-40">•</span>
+          <a href="mission.html" class="hover:text-amber-400">Mission &amp; Vision</a>
+          <span class="hidden sm:inline opacity-40">•</span>
+          <a href="sponsors.html" class="hover:text-amber-400">Sponsors &amp; Supporters</a>
+          <span class="hidden sm:inline opacity-40">•</span>
+          <a href="gallery.html" class="hover:text-amber-400">Photos</a>
+          <span class="hidden sm:inline opacity-40">•</span>
+          <a href="blog.html" class="hover:text-amber-400">Blog</a>
+          <span class="hidden sm:inline opacity-40">•</span>
+          <a href="volunteer.html" class="hover:text-amber-400 underline">Volunteer</a>
+          <span class="hidden sm:inline opacity-40">•</span>
+          <a href="https://donorbox.org/2025-gods-country-march" target="_blank" rel="noopener" class="hover:text-amber-400">Donate</a>
+          <span class="hidden sm:inline opacity-40">•</span>
+          <a href="index.html#rsvp" class="hover:text-amber-400">RSVP</a>
+        </nav>
       </div>
     </div>
-  </div>
-  <div class="text-center text-white/60 text-xs pb-6">
-    © <span id="year"></span> God’s Country March. All rights reserved.
-  </div>
-</footer>
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </header>
+  <div class="h-20"></div>
+
+  <!-- HERO -->
+  <section class="relative isolate overflow-hidden">
+    <div class="absolute inset-0 -z-10 bg-center bg-cover"
+         style="background-image:url('BoiseCrossandCapital.jpeg'); background-position:50% 35%;"></div>
+    <div class="absolute inset-0 -z-10 bg-black/40"></div>
+
+    <div class="mx-auto max-w-7xl px-4 py-16 text-center">
+      <h1 class="text-4xl sm:text-5xl font-extrabold drop-shadow">Volunteer</h1>
+      <p class="mt-4 text-lg sm:text-xl max-w-3xl mx-auto text-white/90">
+        Link arms with us. There’s a place for every gift — prayer, outreach, setup, first aid, media, and more.
+      </p>
+    </div>
+  </section>
+
+  <!-- WAYS TO SERVE -->
+  <section class="mx-auto max-w-7xl px-4 pb-10">
+    <h2 class="text-2xl sm:text-3xl font-bold mb-4">Ways to Serve</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="rounded-2xl bg-black/40 ring-1 ring-white/10 p-5">
+        <h3 class="font-semibold">Prayer Team</h3>
+        <p class="mt-1 text-white/80 text-sm">Cover the gathering in prayer, pray with attendees, and be a peaceful presence.</p>
+      </div>
+      <div class="rounded-2xl bg-black/40 ring-1 ring-white/10 p-5">
+        <h3 class="font-semibold">Outreach &amp; Flyering</h3>
+        <p class="mt-1 text-white/80 text-sm">Share invites online and locally. Table at churches or community spots.</p>
+      </div>
+      <div class="rounded-2xl bg-black/40 ring-1 ring-white/10 p-5">
+        <h3 class="font-semibold">Logistics &amp; Setup</h3>
+        <p class="mt-1 text-white/80 text-sm">Help with setup/teardown, signage, staging, cables, and equipment.</p>
+      </div>
+      <div class="rounded-2xl bg-black/40 ring-1 ring-white/10 p-5">
+        <h3 class="font-semibold">Peacekeepers</h3>
+        <p class="mt-1 text-white/80 text-sm">Calm, friendly volunteers who help with directions and crowd flow. </p>
+      </div>
+      <div class="rounded-2xl bg-black/40 ring-1 ring-white/10 p-5">
+        <h3 class="font-semibold">Media &amp; Content</h3>
+        <p class="mt-1 text-white/80 text-sm">Shoot photos/video, capture testimonies, or help with social media.</p>
+      </div>
+      <div class="rounded-2xl bg-black/40 ring-1 ring-white/10 p-5">
+        <h3 class="font-semibold">First Aid</h3>
+        <p class="mt-1 text-white/80 text-sm">Licensed/experienced helpers for minor needs; bring basic supplies if you can.</p>
+      </div>
+      <div class="rounded-2xl bg-black/40 ring-1 ring-white/10 p-5">
+        <h3 class="font-semibold">Hospitality</h3>
+        <p class="mt-1 text-white/80 text-sm">Welcome table, water handout, family support, and accessibility help.</p>
+      </div>
+      <div class="rounded-2xl bg-black/40 ring-1 ring-white/10 p-5">
+        <h3 class="font-semibold">Drivers</h3>
+        <p class="mt-1 text-white/80 text-sm">Help shuttle, haul gear, or transport supplies (truck/van helpful).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOLUNTEER FORM -->
+  <section class="mx-auto max-w-5xl px-4 pb-16">
+    <div class="rounded-2xl bg-black/60 ring-1 ring-white/10 p-6 shadow">
+      <h2 class="text-2xl font-bold">Sign Up to Volunteer</h2>
+      <p class="mt-2 text-white/80 text-sm">We’ll follow up with details, team leads, and next steps.</p>
+
+      <form action="https://formspree.io/f/xblavkrd" method="POST" class="mt-6 grid gap-4" autocomplete="on">
+        <!-- Tag this form as Volunteer in Formspree -->
+        <input type="hidden" name="_subject" value="Volunteer Signup — God’s Country March" />
+        <input type="hidden" name="form_name" value="volunteer" />
+
+        <!-- Contact -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="text-sm opacity-80">Full Name *</label>
+            <input required name="name" type="text" placeholder="First & Last"
+                   class="mt-1 w-full rounded-xl bg-white text-slate-900 px-3 py-2 ring-2 ring-transparent focus:ring-amber-400/60" />
+          </div>
+          <div>
+            <label class="text-sm opacity-80">Email *</label>
+            <input required name="email" type="email" placeholder="you@email.com"
+                   class="mt-1 w-full rounded-xl bg-white text-slate-900 px-3 py-2 ring-2 ring-transparent focus:ring-amber-400/60" />
+          </div>
+          <div>
+            <label class="text-sm opacity-80">Phone (optional)</label>
+            <input name="phone" type="tel" placeholder="(555) 555-5555"
+                   class="mt-1 w-full rounded-xl bg-white text-slate-900 px-3 py-2 ring-2 ring-transparent focus:ring-amber-400/60" />
+          </div>
+          <div>
+            <label class="text-sm opacity-80">Preferred Contact</label>
+            <select name="preferred_contact"
+                    class="mt-1 w-full rounded-xl bg-white text-slate-900 px-3 py-2 ring-2 ring-transparent focus:ring-amber-400/60">
+              <option>Email</option>
+              <option>Text</option>
+              <option>Phone Call</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Areas of Interest -->
+        <div class="mt-2">
+          <label class="text-sm opacity-80 block mb-2">Areas of Interest (choose all that apply)</label>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+            <label class="flex items-center gap-2"><input type="checkbox" name="areas[]" value="Prayer Team" /> <span>Prayer Team</span></label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="areas[]" value="Outreach & Flyering" /> <span>Outreach &amp; Flyering</span></label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="areas[]" value="Logistics & Setup" /> <span>Logistics &amp; Setup</span></label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="areas[]" value="Peacekeepers" /> <span>Peacekeepers</span></label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="areas[]" value="Media & Content" /> <span>Media &amp; Content</span></label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="areas[]" value="First Aid" /> <span>First Aid</span></label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="areas[]" value="Hospitality" /> <span>Hospitality</span></label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="areas[]" value="Drivers" /> <span>Drivers</span></label>
+          </div>
+        </div>
+
+        <!-- Availability -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="text-sm opacity-80">Availability (select all that apply)</label>
+            <div class="mt-2 grid grid-cols-2 gap-2 text-sm">
+              <label class="flex items-center gap-2"><input type="checkbox" name="availability[]" value="Before event (outreach)" /> <span>Before event (outreach)</span></label>
+              <label class="flex items-center gap-2"><input type="checkbox" name="availability[]" value="Day-of (setup)" /> <span>Day-of (setup)</span></label>
+              <label class="flex items-center gap-2"><input type="checkbox" name="availability[]" value="During event" /> <span>During event</span></label>
+              <label class="flex items-center gap-2"><input type="checkbox" name="availability[]" value="After event (teardown)" /> <span>After event (teardown)</span></label>
+            </div>
+          </div>
+          <div>
+            <label class="text-sm opacity-80">Group / Church Name (optional)</label>
+            <input name="group" type="text" placeholder="If signing up as a group"
+                   class="mt-1 w-full rounded-xl bg-white text-slate-900 px-3 py-2 ring-2 ring-transparent focus:ring-amber-400/60" />
+          </div>
+        </div>
+
+        <!-- Skills & Resources -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="text-sm opacity-80">Relevant Skills (optional)</label>
+            <input name="skills" type="text" placeholder="First aid, photography, public speaking, etc."
+                   class="mt-1 w-full rounded-xl bg-white text-slate-900 px-3 py-2 ring-2 ring-transparent focus:ring-amber-400/60" />
+          </div>
+          <div>
+            <label class="text-sm opacity-80">Can Bring (optional)</label>
+            <div class="mt-2 grid grid-cols-2 gap-2 text-sm">
+              <label class="flex items-center gap-2"><input type="checkbox" name="can_bring[]" value="Water cases" /> <span>Water cases</span></label>
+              <label class="flex items-center gap-2"><input type="checkbox" name="can_bring[]" value="First aid kit" /> <span>First aid kit</span></label>
+              <label class="flex items-center gap-2"><input type="checkbox" name="can_bring[]" value="Sound/PA gear" /> <span>Sound/PA gear</span></label>
+              <label class="flex items-center gap-2"><input type="checkbox" name="can_bring[]" value="Truck/van" /> <span>Truck/van</span></label>
+              <label class="flex items-center gap-2"><input type="checkbox" name="can_bring[]" value="Other" /> <span>Other</span></label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Notes -->
+        <div>
+          <label class="text-sm opacity-80">Anything we should know? (optional)</label>
+          <textarea name="notes" rows="4" placeholder="Tell us more about how you’d like to help."
+                    class="mt-1 w-full rounded-xl bg-white text-slate-900 px-3 py-2 ring-2 ring-transparent focus:ring-amber-400/60"></textarea>
+        </div>
+
+        <!-- Agreement -->
+        <div class="rounded-xl bg-black/40 ring-1 ring-white/10 p-4 text-sm leading-relaxed">
+          <label class="flex items-start gap-2">
+            <input required type="checkbox" name="agree" value="yes" class="mt-1" />
+            <span>
+              I agree to follow event leadership for safety and logistics. I agree to maintain professionalism and to follow any lawful direction by local law enforcement. 
+            </span>
+          </label>
+          <p class="mt-2 opacity-80">Your info is used only for event coordination. We won’t share or sell your data.</p>
+        </div>
+
+        <!-- Submit -->
+        <div class="flex flex-wrap items-center gap-3">
+          <button type="submit"
+                  class="inline-flex items-center rounded-2xl bg-white text-slate-900 px-5 py-3 text-sm font-semibold shadow hover:shadow-lg">
+            Submit Volunteer Form
+          </button>
+          <a href="mailto:GodsCountryMarch@gmail.com?subject=Volunteer%20Question"
+             class="text-sm underline hover:no-underline">Questions? Email us</a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black">
+    <div class="mx-auto max-w-7xl px-4 py-10 text-white/80 text-center space-y-2">
+      <p>© <span id="y"></span> God’s Country March • <a href="index.html#donate" class="underline">Support the March</a></p>
+      <p>Questions? <a class="underline" href="mailto:GodsCountryMarch@gmail.com">GodsCountryMarch@gmail.com</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
