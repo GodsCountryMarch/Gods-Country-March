@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#000000" />
+  <title>Sponsors & Supporters • God’s Country March</title>
+
+  <link rel="canonical" href="https://godscountrymarch.com/sponsors.html" />
+  <meta name="description" content="Sponsors and supporters of the God’s Country March." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preload" as="image" href="BoiseCrossandCapital.jpeg" />
+
+  <style>
+    html { scroll-behavior: smooth; }
+    section[id] { scroll-margin-top: 96px; }
+    body { font-family: Arial, sans-serif; background: linear-gradient(to right, #1a202c, #2d3748); color: #fff; }
+    header { padding-top: env(safe-area-inset-top); }
+    .nav-words a { text-decoration: none; }
+    .nav-words a:hover { text-decoration: underline; }
+    .card { background: rgba(0,0,0,.35); }
+    @media (prefers-reduced-motion: reduce){ *{animation:none!important;transition:none!important;} }
+  </style>
+
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+<body class="text-white">
+
+  <!-- Word-strip nav -->
+  <header class="fixed top-0 inset-x-0 z-50">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="mt-3 mb-2 flex justify-center">
+        <nav class="nav-words w-full rounded-2xl bg-black/70 backdrop-blur text-white shadow ring-1 ring-white/10
+                    px-3 sm:px-4 py-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[13px] sm:text-sm">
+          <a href="index.html" class="font-semibold hover:text-amber-400">God’s Country March</a>
+          <span class="hidden sm:inline opacity-40">•</span>
+          <a href="mission.html" class="hover:text-amber-400">Mission &amp; Vision</a>
+          <span class="hidden sm:inline opacity-40">•</span>
+          <a href="sponsors.html" class="hover:text-amber-400 underline">Sponsors &amp; Supporters</a>
+          <span class="hidden sm:inline opacity-40">•</span>
+          <a href="gallery.html" class="hover:text-amber-400">Photos</a>
+          <span class="hidden sm:inline opacity-40">•</span>
+          <a href="blog.html" class="hover:text-amber-400">Blog</a>
+          <span class="hidden sm:inline opacity-40">•</span>
+          <a href="volunteer.html" class="hover:text-amber-400">Volunteer</a>
+          <span class="hidden sm:inline opacity-40">•</span>
+          <a href="https://donorbox.org/2025-gods-country-march" target="_blank" rel="noopener" class="hover:text-amber-400">Donate</a>
+          <span class="hidden sm:inline opacity-40">•</span>
+          <a href="index.html#rsvp" class="hover:text-amber-400">RSVP</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <div class="h-20"></div>
+
+  <!-- Hero -->
+  <section class="relative isolate overflow-hidden">
+    <div class="absolute inset-0 -z-10 bg-center bg-cover"
+         style="background-image:url('BoiseCrossandCapital.jpeg'); background-position:50% 35%;"></div>
+    <div class="absolute inset-0 -z-10 bg-black/40"></div>
+
+    <div class="mx-auto max-w-7xl px-4 py-16 text-center">
+      <h1 class="text-4xl sm:text-5xl font-extrabold drop-shadow">Sponsors &amp; Supporters</h1>
+      <p class="mt-4 text-lg sm:text-xl max-w-3xl mx-auto text-white/90">
+        Thank you to the organizations and friends standing with this movement.
+      </p>
+    </div>
+  </section>
+
+  <!-- Tiers -->
+  <section class="mx-auto max-w-7xl px-4 pb-4">
+    <div class="flex items-center justify-center gap-2 text-xs sm:text-sm opacity-80">
+      <span>Filter:</span>
+      <button data-tier="all" class="tier-btn rounded-lg px-3 py-1.5 bg-black/60 ring-1 ring-white/10">All</button>
+      <button data-tier="partner" class="tier-btn rounded-lg px-3 py-1.5 bg-black/30 ring-1 ring-white/10">Partners</button>
+      <button data-tier="sponsor" class="tier-btn rounded-lg px-3 py-1.5 bg-black/30 ring-1 ring-white/10">Sponsors</button>
+      <button data-tier="supporter" class="tier-btn rounded-lg px-3 py-1.5 bg-black/30 ring-1 ring-white/10">Supporters</button>
+    </div>
+  </section>
+
+  <!-- Grid -->
+  <section class="mx-auto max-w-7xl px-4 pb-16">
+    <div id="grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <!-- JS renders cards here -->
+    </div>
+
+    <div class="mt-10 text-center">
+      <a href="mailto:GodsCountryMarch@gmail.com?subject=Sponsor%20Inquiry"
+         class="inline-flex items-center rounded-2xl bg-white text-slate-900 px-5 py-3 text-sm font-semibold shadow hover:shadow-lg">
+        Become a Sponsor
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black">
+    <div class="mx-auto max-w-7xl px-4 py-10 text-white/80 text-center space-y-2">
+      <p>© <span id="y"></span> God’s Country March • <a href="index.html#donate" class="underline">Support the March</a></p>
+      <p>Questions? <a class="underline" href="mailto:GodsCountryMarch@gmail.com">GodsCountryMarch@gmail.com</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // =========================
+    // EASY-EDIT SPONSOR LIST
+    // =========================
+    // Drop logo images in /sponsors/ (PNG/SVG/JPG). Then list sponsors below.
+    // Fields:
+    //   name      (required)
+    //   tier      "partner" | "sponsor" | "supporter"  (default: "supporter")
+    //   url       (optional, site or social)
+    //   logo      (optional, filename in /sponsors/)
+    //   blurb     (optional, short description)
+    const baseLogoPath = "sponsors/";
+
+    const SPONSORS = [
+      { name: "Idaho Republican News", tier: "supporter", url: "", logo: "", blurb: "" },
+      // Add more, e.g.:
+      // { name: "Turning Point USA", tier: "sponsor", url: "https://www.tpusa.com", logo: "tpusa.png", blurb: "Standing for freedom." },
+      // { name: "ID Liberty Dogs", tier: "supporter", url: "https://example.com", logo: "libertydogs.png" },
+    ];
+
+    // =========================
+    // Render logic
+    // =========================
+    const grid = document.getElementById('grid');
+    const tierBtns = document.querySelectorAll('.tier-btn');
+    let currentTier = 'all';
+    let items = [];
+
+    function normalize(list) {
+      return list.map((s) => ({
+        name: s.name,
+        tier: (s.tier || 'supporter').toLowerCase(),
+        url: s.url || '',
+        logo: s.logo || '',
+        blurb: s.blurb || ''
+      }));
+    }
+
+    function filtered(list, tier) {
+      if (tier === 'all') return list;
+      return list.filter(s => s.tier === tier);
+    }
+
+    function initials(name) {
+      return name.split(/\s+/).map(w => w[0]).slice(0,3).join('').toUpperCase();
+    }
+
+    function cardHTML(s) {
+      const hasLogo = !!s.logo;
+      const logoEl = hasLogo
+        ? `<img src="${baseLogoPath + s.logo}" alt="${s.name} logo" class="h-12 w-12 object-contain">`
+        : `<div class="h-12 w-12 rounded-full bg-white/10 ring-1 ring-white/20 flex items-center justify-center text-sm font-semibold">${initials(s.name)}</div>`;
+
+      const nameEl = s.url
+        ? `<a href="${s.url}" target="_blank" rel="noopener" class="font-semibold hover:underline">${s.name}</a>`
+        : `<span class="font-semibold">${s.name}</span>`;
+
+      const tierLabel = s.tier === 'partner' ? 'Partner'
+                       : s.tier === 'sponsor' ? 'Sponsor'
+                       : 'Supporter';
+
+      return `
+        <article class="card rounded-2xl ring-1 ring-white/10 p-4 shadow hover:shadow-lg hover:-translate-y-0.5 transition">
+          <div class="flex items-center gap-3">
+            ${logoEl}
+            <div>
+              ${nameEl}
+              <div class="text-xs text-white/70">${tierLabel}</div>
+            </div>
+          </div>
+          ${s.blurb ? `<p class="mt-3 text-sm text-white/80">${s.blurb}</p>` : ``}
+        </article>
+      `;
+    }
+
+    function render() {
+      grid.innerHTML = filtered(items, currentTier).map(cardHTML).join('') ||
+        `<div class="col-span-full text-center text-white/70">No entries yet.</div>`;
+    }
+
+    tierBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tierBtns.forEach(b => b.classList.toggle('bg-black/60', b===btn));
+        tierBtns.forEach(b => b.classList.toggle('bg-black/30', b!==btn));
+        currentTier = btn.dataset.tier;
+        render();
+      });
+    });
+
+    items = normalize(SPONSORS);
+    render();
+  </script>
+</body>
+</html>
