@@ -6,27 +6,25 @@
   <meta name="theme-color" content="#000000" />
   <title>God’s Country March</title>
 
-  <!-- Canonical + social -->
+  <!-- SEO / Social -->
   <link rel="canonical" href="https://godscountrymarch.com/" />
-  <meta name="description" content="Idaho’s first God’s Country March. Honor Charlie, honor Christ, and take a stand for faith and freedom at the Idaho State Capitol." />
+  <meta name="description" content="Idaho’s first God’s Country March. Honor Christ and the mission Charlie started. Join us Oct 14 at the Idaho State Capitol." />
   <meta property="og:title" content="God’s Country March" />
   <meta property="og:description" content="Join Idaho’s first God’s Country March — a movement of faith and freedom." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://godscountrymarch.com/" />
   <meta property="og:image" content="https://godscountrymarch.com/BoiseCrossandCapital.jpeg" />
-  <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Display font for the hero title -->
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
-  <!-- Preload hero background for faster paint -->
+  <!-- Display font for the hero title -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+
+  <!-- Preload the hero image -->
   <link rel="preload" as="image" href="BoiseCrossandCapital.jpeg" />
 
   <style>
     html { scroll-behavior: smooth; }
-    /* Prevent anchored sections from hiding under fixed nav */
     section[id] { scroll-margin-top: 96px; }
     body {
       font-family: Arial, sans-serif;
@@ -35,94 +33,110 @@
     }
     /* Display font for the hero */
     .font-display { font-family: 'Bebas Neue', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; letter-spacing: .02em; }
-    /* Mobile safe-areas for notched devices */
+    /* Word-strip nav helpers */
     header { padding-top: env(safe-area-inset-top); }
-    .mobile-panel-header { padding-top: calc(1rem + env(safe-area-inset-top)); }
-    .mobile-panel-footer { padding-bottom: env(safe-area-inset-bottom); }
-    /* Reduce motion for users who prefer it */
-    @media (prefers-reduced-motion: reduce) {
-      * { animation: none !important; transition: none !important; }
-    }
-      /* Readable "word nav" on any background */
     .nav-words a { text-decoration: none; }
     .nav-words a:hover { text-decoration: underline; }
-    .nav-words a:hover { text-decoration: underline; }
+    @media (prefers-reduced-motion: reduce){ *{animation:none!important;transition:none!important;} }
   </style>
 
-  <!-- Vercel Analytics / Speed Insights (safe for static HTML) -->
+  <!-- Optional: Vercel Analytics -->
   <script defer src="/_vercel/insights/script.js"></script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
 </head>
-
 <body class="text-white">
-  <!-- NAV -->
+
+  <!-- WORD-STRIP NAV (simple, fixed, readable) -->
   <header class="fixed top-0 inset-x-0 z-50">
     <div class="mx-auto max-w-7xl px-4">
       <div class="mt-3 mb-2 flex justify-center">
-        <nav class="nav-words w-full rounded-2xl bg-black/70 backdrop-blur text-white shadow ring-1 ring-white/10 px-3 sm:px-4 py-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[13px] sm:text-sm">
-          <a href="index.html" class="font-semibold hover:text-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400/40 rounded">God’s Country March</a>
+        <nav class="nav-words w-full rounded-2xl bg-black/70 backdrop-blur text-white shadow ring-1 ring-white/10
+                    px-3 sm:px-4 py-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[13px] sm:text-sm">
+          <a href="index.html" class="font-semibold hover:text-amber-400">God’s Country March</a>
           <span class="hidden sm:inline opacity-40">•</span>
-          <a href="mission.html" class="hover:text-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400/40 rounded">Mission &amp; Vision</a>
+          <a href="mission.html" class="hover:text-amber-400">Mission &amp; Vision</a>
           <span class="hidden sm:inline opacity-40">•</span>
-          <a href="sponsors.html" class="hover:text-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400/40 rounded">Sponsors &amp; Supporters</a>
+          <a href="sponsors.html" class="hover:text-amber-400">Sponsors &amp; Supporters</a>
           <span class="hidden sm:inline opacity-40">•</span>
-          <a href="gallery.html" class="hover:text-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400/40 rounded">Photos</a>
+          <a href="gallery.html" class="hover:text-amber-400">Photos</a>
           <span class="hidden sm:inline opacity-40">•</span>
-          <a href="blog.html" class="hover:text-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400/40 rounded">Blog</a>
+          <a href="blog.html" class="hover:text-amber-400">Blog</a>
           <span class="hidden sm:inline opacity-40">•</span>
-          <a href="volunteer.html" class="hover:text-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400/40 rounded">Volunteer</a>
+          <a href="volunteer.html" class="hover:text-amber-400">Volunteer</a>
           <span class="hidden sm:inline opacity-40">•</span>
-          <a href="donate.html" class="hover:text-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400/40 rounded">Donate</a>
+          <!-- Donate goes straight to Donorbox (opens new tab) -->
+          <a href="https://donorbox.org/2025-gods-country-march" target="_blank" rel="noopener" class="hover:text-amber-400">Donate</a>
           <span class="hidden sm:inline opacity-40">•</span>
-          <a href="#rsvp" class="hover:text-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400/40 rounded">RSVP</a>
+          <a href="#rsvp" class="hover:text-amber-400">RSVP</a>
         </nav>
       </div>
     </div>
   </header>
-
-  <!-- Spacer to clear fixed header -->
+  <!-- Spacer to clear the fixed nav -->
   <div class="h-20"></div>
 
-  <!-- Mobile menu -->
   <!-- HERO -->
-  <section id="home" class="relative isolate pt-16 text-white overflow-hidden">
+  <section id="home" class="relative isolate pt-12 text-white overflow-hidden">
     <!-- Background image -->
-    <div class="absolute inset-0 -z-10 bg-center bg-cover" style="background-image:url('BoiseCrossandCapital.jpeg'); background-position:50% 35%;"></div>
-    <!-- Subtle dark overlay to pop text -->
+    <div class="absolute inset-0 -z-10 bg-center bg-cover"
+         style="background-image:url('BoiseCrossandCapital.jpeg'); background-position:50% 35%;"></div>
+    <!-- Subtle dark overlay -->
     <div class="absolute inset-0 -z-10 bg-black/40"></div>
 
-    <div class="mx-auto max-w-7xl px-4 pt-10 pb-20 text-center">
-      <!-- Mission tagline (kept) -->
-      <!-- Big title (top) -->
-      <h1 class="font-display text-[12vw] sm:text-[10vw] lg:text-[8vw] font-black leading-[0.9] drop-shadow-[0_4px_20px_rgba(0,0,0,0.6)]">God’s Country March</h1>
-      <p class="mt-2 mb-3 text-sm sm:text-base tracking-wide text-white/90">Uniting Idaho in faith, freedom, and community</p>
+    <div class="mx-auto max-w-7xl px-4 pt-6 pb-16 text-center">
+      <!-- MASSIVE title across the top -->
+      <h1 class="font-display uppercase w-full
+                 text-[15vw] sm:text-[12vw] lg:text-[10vw] 2xl:text-[9vw]
+                 leading-[0.85] font-black tracking-[0.02em]
+                 drop-shadow-[0_6px_24px_rgba(0,0,0,0.65)]">
+        GOD’S COUNTRY MARCH
+      </h1>
 
-      <!-- Date badge (clickable to Details) -->
-      <a href="#details" class="mt-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/70 px-4 py-2 text-sm shadow backdrop-blur hover:bg-black/80">
+      <!-- Tagline -->
+      <p class="mt-3 text-sm sm:text-base tracking-wide text-white/90">
+        Uniting Idaho in faith, freedom, and community
+      </p>
+
+      <!-- Date pill -->
+      <a href="#details"
+         class="mt-5 inline-flex items-center gap-2 rounded-full border border-white/20
+                bg-black/70 px-4 py-2 text-sm shadow backdrop-blur hover:bg-black/80">
         <span class="h-2 w-2 rounded-full bg-amber-400"></span>
         Tue, Oct 14, 2025 • 6:00 PM • Idaho State Capitol Steps
       </a>
 
       <!-- Updated hero paragraph -->
-      <p class="mt-6 text-lg sm:text-xl max-w-2xl mx-auto opacity-95">
-        Idaho’s first God’s Country March. Let’s make Idaho the leader in what a God‑centered country looks like. Honor the mission that Charlie started. Add your voice to the Capitol steps on October 14th. This is a movement of faith, and a stand against those who would try to silence us.
+      <p class="mt-6 text-lg sm:text-xl max-w-3xl mx-auto opacity-95">
+        Idaho’s first God’s Country March. Let’s make Idaho the leader in what a God-centered country looks like.
+        Honor the mission that Charlie started. Add your voice to the Capitol steps on October 14th.
+        This is a movement of faith, and a stand against those who would try to silence us.
       </p>
 
-      <!-- Dual CTAs -->
+      <!-- CTAs -->
       <div class="mt-8 flex flex-wrap justify-center gap-3">
-        <a href="#rsvp" class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-2xl shadow hover:shadow-lg transition active:scale-[.99] bg-white text-slate-900">Join the March</a>
-        <a href="#donate" class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-2xl shadow hover:shadow-lg transition active:scale-[.99] bg-black/70 border border-white/20">Support the Movement</a>
+        <a href="#rsvp"
+           class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-2xl
+                  shadow hover:shadow-lg transition active:scale-[.99] bg-white text-slate-900">
+          Join the March
+        </a>
+        <a href="#donate"
+           class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-2xl
+                  shadow hover:shadow-lg transition active:scale-[.99] bg-black/70 border border-white/20">
+          Support the Movement
+        </a>
       </div>
     </div>
   </section>
 
   <!-- ABOUT -->
   <section id="about" class="mx-auto max-w-7xl px-4 py-16">
-    <!-- Intro -->
     <div>
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-white drop-shadow-md tracking-wide text-center">What is the God’s Country March?</h2>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white drop-shadow-md tracking-wide text-center">
+        What is the God’s Country March?
+      </h2>
       <p class="mt-4 max-w-3xl mx-auto text-lg leading-relaxed text-gray-200 text-center">
-        This is a public witness of faith and freedom in Idaho. We gather to take a stand and celebrate the freedoms God has given each person in our nation. We honor Christ, and we honor Charlie. We are God’s Country. We are Charlie.
+        This is a public witness of faith and freedom in Idaho. We gather to take a stand and celebrate the freedoms
+        God has given each person in our nation. We honor Christ, and we honor Charlie. We are God’s Country. We are Charlie.
       </p>
     </div>
 
@@ -181,9 +195,15 @@
   <!-- DONATE -->
   <section id="donate" class="py-16 text-center bg-gray-900 text-white">
     <h2 class="text-3xl font-extrabold drop-shadow-md">Support the March</h2>
-    <p class="mt-4 text-lg max-w-2xl mx-auto text-gray-300">Your donations help cover permits, sound, and logistics. Thank you for supporting this peaceful witness.</p>
+    <p class="mt-4 text-lg max-w-2xl mx-auto text-gray-300">
+      Your donations help cover permits, sound, and logistics. Thank you for supporting this peaceful witness.
+    </p>
     <div class="mt-8">
-      <a href="https://donorbox.org/2025-gods-country-march" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-3 text-lg font-semibold text-white bg-black rounded-full shadow-lg hover:bg-yellow-500 hover:text-black transition">Donate Now</a>
+      <a href="https://donorbox.org/2025-gods-country-march" target="_blank" rel="noopener"
+         class="inline-flex items-center px-6 py-3 text-lg font-semibold text-white
+                bg-black rounded-full shadow-lg hover:bg-yellow-500 hover:text-black transition">
+        Donate Now
+      </a>
     </div>
   </section>
 
@@ -191,19 +211,32 @@
   <section id="rsvp" class="py-20 bg-black text-white text-center">
     <h2 class="text-3xl font-extrabold drop-shadow-md">RSVP to get updates</h2>
     <p class="mt-4 text-lg text-gray-300">Sign up to receive updates about speakers, details, and reminders for the March.</p>
+
     <form action="https://formspree.io/f/xblavkrd" method="POST" class="mt-8 max-w-md mx-auto space-y-4">
-      <input type="text" name="name" placeholder="Full Name" required class="w-full px-4 py-3 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-amber-400" />
-      <input type="email" name="email" placeholder="Email" required class="w-full px-4 py-3 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-amber-400" />
-      <textarea name="message" placeholder="Message (optional)" rows="3" class="w-full px-4 py-3 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-amber-400"></textarea>
-      <button type="submit" class="w-full bg-amber-500 text-black font-bold py-3 px-6 rounded-md shadow-md hover:bg-amber-400 transition">RSVP</button>
+      <input type="text" name="name" placeholder="Full Name" required
+             class="w-full px-4 py-3 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-amber-400" />
+      <input type="email" name="email" placeholder="Email" required
+             class="w-full px-4 py-3 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-amber-400" />
+      <textarea name="message" placeholder="Message (optional)" rows="3"
+                class="w-full px-4 py-3 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-amber-400"></textarea>
+      <button type="submit"
+              class="w-full bg-amber-500 text-black font-bold py-3 px-6 rounded-md shadow-md hover:bg-amber-400 transition">
+        RSVP
+      </button>
     </form>
   </section>
 
   <!-- FOUNDATION VISION -->
   <section id="vision" class="bg-gradient-to-b from-slate-100 to-white py-20 text-slate-900">
     <div class="mx-auto max-w-4xl text-center px-4">
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-6">God’s Country is More Than One Event</h2>
-      <p class="text-lg text-slate-700 leading-relaxed mb-12">We’re building a foundation that organizes prayer, outreach, and community action across Idaho and beyond. This is the beginning of a movement, not just a march.</p>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-6">
+        God’s Country is More Than One Event
+      </h2>
+      <p class="text-lg text-slate-700 leading-relaxed mb-12">
+        We’re building a foundation that organizes prayer, outreach, and community action across Idaho and beyond.
+        This is the beginning of a movement, not just a march.
+      </p>
+
       <div class="grid gap-6 sm:grid-cols-3">
         <div class="rounded-2xl bg-white p-6 shadow-md hover:shadow-lg transition">
           <h3 class="font-semibold text-slate-900 mb-2">Faith Gatherings</h3>
@@ -229,9 +262,8 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script>
-    // Year in footer only (nav is plain words, no JS needed)
+    // Year in footer
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
