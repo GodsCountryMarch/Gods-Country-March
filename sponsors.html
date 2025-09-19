@@ -8,18 +8,18 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       html { scroll-behavior: smooth; }
-      section[id] { scroll-margin-top: 96px; }
+      section[id] { scroll-margin-top: 96px; } /* avoid fixed-header overlap */
     </style>
   </head>
-  <body class="bg-slate-950 text-white">
+  <body class="bg-gradient-to-b from-slate-900 to-slate-950 text-white selection:bg-amber-400 selection:text-black">
 
-    <!-- top nav (uniform across site) -->
+    <!-- top nav (unified across pages) -->
     <header class="fixed top-0 inset-x-0 z-50">
       <div class="mx-auto max-w-7xl px-4">
         <div class="mt-3 mb-2 flex justify-center">
           <nav class="w-full rounded-2xl bg-black/70 backdrop-blur text-white shadow ring-1 ring-white/10
                       px-3 sm:px-4 py-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[13px] sm:text-sm">
-            <a href="index.html" class="font-semibold hover:text-amber-400">God’s Country March</a>
+            <a href="index.html" class="hover:text-amber-400">God’s Country March</a>
             <span class="hidden sm:inline opacity-40">•</span>
             <a href="mission.html" class="hover:text-amber-400">Mission &amp; Vision</a>
             <span class="hidden sm:inline opacity-40">•</span>
@@ -41,97 +41,94 @@
     <div class="h-20"></div>
 
     <!-- page header -->
-    <section class="relative isolate overflow-hidden">
-      <div class="absolute inset-0 -z-10 bg-gradient-to-b from-slate-900 via-slate-900/80 to-slate-950"></div>
-      <div class="mx-auto max-w-7xl px-4 py-14 sm:py-16">
-        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Sponsors &amp; Supporters</h1>
-        <p class="mt-3 max-w-2xl text-slate-300">
-          Thank you to the organizations standing with the God’s Country March.
-        </p>
-      </div>
+    <section class="mx-auto max-w-7xl px-4 pt-6 pb-2">
+      <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Sponsors &amp; Supporters</h1>
+      <p class="mt-3 text-slate-300 max-w-3xl">
+        Thank you to the organizations standing with the God’s Country March.
+      </p>
     </section>
 
-    <!-- cards -->
-    <section class="mx-auto max-w-7xl px-4 pb-20">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <!-- grid -->
+    <section class="mx-auto max-w-7xl px-4 pb-14">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
 
         <!-- Idaho Republican News -->
-        <a href="#" class="group rounded-2xl bg-white/5 ring-1 ring-white/10 hover:ring-amber-400/40
-                           transition overflow-hidden flex flex-col">
-          <div class="aspect-[16/10] bg-black/10 flex items-center justify-center p-6">
-            <img src="idaho-republican-news.jpg" alt="Idaho Republican News" />
-            <img
-              src="idaho-republican-news.jpg"
-              alt="Idaho Republican News logo"
-              loading="lazy"
-              class="max-h-full max-w-full object-contain drop-shadow"
-            />
+        <article class="rounded-2xl ring-1 ring-white/10 bg-white/5 backdrop-blur">
+          <div class="p-6">
+            <div class="aspect-[16/9] w-full rounded-xl bg-black/20 ring-1 ring-white/10 flex items-center justify-center overflow-hidden">
+              <!-- If your images are in the repo root, keep these paths. If you moved them into /images, change to images/filename.jpg -->
+              <img
+                src="idaho-republican-news.jpg"
+                alt="Idaho Republican News logo"
+                loading="lazy"
+                class="max-h-full max-w-full object-contain"
+              />
+            </div>
           </div>
-          <div class="p-5 sm:p-6">
+          <div class="px-6 pb-6">
             <h3 class="font-semibold text-lg">Idaho Republican News</h3>
-            <p class="mt-1 text-sm text-slate-300">
+            <p class="mt-1 text-slate-300">
               Local reporting and commentary for Idaho conservatives.
             </p>
           </div>
-        </a>
+        </article>
 
         <!-- Idaho Liberty Dogs -->
-        <a href="#" class="group rounded-2xl bg-white/5 ring-1 ring-white/10 hover:ring-amber-400/40
-                           transition overflow-hidden flex flex-col">
-          <div class="aspect-[16/10] bg-black/10 flex items-center justify-center p-6">
-           <img src="idaho-liberty-dogs.jpg" alt="Idaho Liberty Dogs" />
-            <img
-              src="idaho-liberty-dogs.jpg"
-              alt="Idaho Liberty Dogs logo"
-              loading="lazy"
-              class="max-h-full max-w-full object-contain drop-shadow"
-            />
+        <article class="rounded-2xl ring-1 ring-white/10 bg-white/5 backdrop-blur">
+          <div class="p-6">
+            <div class="aspect-[16/9] w-full rounded-xl bg-black/20 ring-1 ring-white/10 flex items-center justify-center overflow-hidden">
+              <img
+                src="idaho-liberty-dogs.jpg"
+                alt="Idaho Liberty Dogs logo"
+                loading="lazy"
+                class="max-h-full max-w-full object-contain"
+              />
+            </div>
           </div>
-          <div class="p-5 sm:p-6">
+          <div class="px-6 pb-6">
             <h3 class="font-semibold text-lg">Idaho Liberty Dogs</h3>
-            <p class="mt-1 text-sm text-slate-300">
+            <p class="mt-1 text-slate-300">
               Grassroots community standing for faith, family, and freedom.
             </p>
           </div>
-        </a>
+        </article>
 
-        <!-- Turning Point USA (placeholder image – optional) -->
-        <a href="#" class="group rounded-2xl bg-white/5 ring-1 ring-white/10 hover:ring-amber-400/40
-                           transition overflow-hidden flex flex-col">
-          <div class="aspect-[16/10] bg-black/10 flex items-center justify-center p-6">
-            <!-- If you add a TPUSA logo, set its path below and remove the placeholder text -->
-            <span class="text-slate-400 text-sm">Add logo (optional)</span>
-          </div>
-          <div class="p-5 sm:p-6">
+        <!-- Turning Point USA (no 'Add logo' text) -->
+        <article class="rounded-2xl ring-1 ring-white/10 bg-white/5 backdrop-blur">
+          <!-- No logo block shown per your request -->
+          <div class="px-6 pt-6 pb-6">
             <h3 class="font-semibold text-lg">Turning Point USA</h3>
-            <p class="mt-1 text-sm text-slate-300">
+            <p class="mt-1 text-slate-300">
               Empowering students to promote freedom, free markets, and limited government.
             </p>
           </div>
-        </a>
+        </article>
 
       </div>
 
-      <!-- add-more helper -->
-      <div class="mt-10 rounded-2xl bg-white/5 ring-1 ring-white/10 p-5 sm:p-6">
-        <h4 class="font-semibold">Want to add more?</h4>
-        <p class="mt-1 text-sm text-slate-300">
-          Drop a new logo into your repo and duplicate one of the cards above. Replace the
-          <code class="text-amber-300">src</code> path and the text. Logos render best as transparent PNGs,
-          but JPGs work too.
-        </p>
+      <!-- CTA -->
+      <div class="mt-10 flex justify-center">
+        <a
+          href="mailto:GodsCountryMarch@gmail.com?subject=Become%20a%20Sponsor"
+          class="inline-flex items-center justify-center px-6 py-3 rounded-2xl font-semibold
+                 bg-amber-500 text-black shadow hover:bg-amber-400 active:scale-[.99]
+                 focus:outline-none focus:ring-2 focus:ring-amber-400/50"
+        >
+          Become a Sponsor
+        </a>
       </div>
     </section>
 
     <!-- footer -->
-    <footer class="bg-black">
+    <footer class="bg-black/60">
       <div class="mx-auto max-w-7xl px-4 py-10 text-white/80 text-center space-y-2">
-        <p>© <span id="y"></span> God’s Country March •
-          <a class="underline" href="https://donorbox.org/2025-gods-country-march" target="_blank" rel="noopener">Support the March</a>
-        </p>
+        <p>© <span id="y"></span> God’s Country March • <a href="https://donorbox.org/2025-gods-country-march" target="_blank" rel="noopener" class="underline">Support the March</a></p>
         <p>Questions? <a class="underline" href="mailto:GodsCountryMarch@gmail.com">GodsCountryMarch@gmail.com</a></p>
       </div>
     </footer>
-    <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+
+    <script>
+      document.getElementById('y').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
