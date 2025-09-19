@@ -13,7 +13,7 @@
   </head>
   <body class="bg-gradient-to-b from-slate-900 to-slate-950 text-white selection:bg-amber-400 selection:text-black">
 
-    <!-- top nav (unified across pages) -->
+    <!-- top nav -->
     <header class="fixed top-0 inset-x-0 z-50">
       <div class="mx-auto max-w-7xl px-4">
         <div class="mt-3 mb-2 flex justify-center">
@@ -56,7 +56,6 @@
         <article class="rounded-2xl ring-1 ring-white/10 bg-white/5 backdrop-blur">
           <div class="p-6">
             <div class="aspect-[16/9] w-full rounded-xl bg-black/20 ring-1 ring-white/10 flex items-center justify-center overflow-hidden">
-              <!-- If your images are in the repo root, keep these paths. If you moved them into /images, change to images/filename.jpg -->
               <img
                 src="idaho-republican-news.jpg"
                 alt="Idaho Republican News logo"
@@ -93,9 +92,8 @@
           </div>
         </article>
 
-        <!-- Turning Point USA (no 'Add logo' text) -->
+        <!-- Turning Point USA -->
         <article class="rounded-2xl ring-1 ring-white/10 bg-white/5 backdrop-blur">
-          <!-- No logo block shown per your request -->
           <div class="px-6 pt-6 pb-6">
             <h3 class="font-semibold text-lg">Turning Point USA</h3>
             <p class="mt-1 text-slate-300">
@@ -107,15 +105,30 @@
       </div>
 
       <!-- CTA -->
-      <div class="mt-10 flex justify-center">
+      <div class="mt-10 flex flex-col items-center space-y-3">
+        <!-- Main button (opens Gmail compose) -->
         <a
-          href="mailto:GodsCountryMarch@gmail.com?subject=Become%20a%20Sponsor"
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=GodsCountryMarch@gmail.com&su=Become%20a%20Sponsor&body=Hi%20God%E2%80%99s%20Country%20March%20team%2C%0A%0AI%E2%80%99m%20interested%20in%20sponsoring.%20Here%E2%80%99s%20a%20bit%20about%20our%20organization%3A%0A%0A-%20Name%3A%0A-%20Website%3A%0A-%20Best%20contact%3A%0A-%20Sponsorship%20interest%3A%0A%0AThank%20you!"
+          target="_blank" rel="noopener"
           class="inline-flex items-center justify-center px-6 py-3 rounded-2xl font-semibold
                  bg-amber-500 text-black shadow hover:bg-amber-400 active:scale-[.99]
                  focus:outline-none focus:ring-2 focus:ring-amber-400/50"
         >
           Become a Sponsor
         </a>
+
+        <!-- Fallback links -->
+        <p class="text-sm text-slate-300 text-center">
+          Not using Gmail? 
+          <a class="underline" target="_blank" rel="noopener"
+             href="https://outlook.live.com/owa/?path=/mail/action/compose&to=GodsCountryMarch@gmail.com&subject=Become%20a%20Sponsor">
+            Open in Outlook.com
+          </a>
+          or 
+          <a class="underline" href="mailto:GodsCountryMarch@gmail.com?subject=Become%20a%20Sponsor">
+            use your mail app
+          </a>.
+        </p>
       </div>
     </section>
 
