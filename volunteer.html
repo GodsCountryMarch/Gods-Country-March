@@ -59,13 +59,11 @@
           <input class="field" type="text" name="name" required placeholder="Your name" />
         </div>
 
-        <!-- EMAIL ROW (toggles) -->
         <div id="emailRow">
           <label class="label">Email *</label>
           <input id="emailInput" class="field" type="email" name="email" placeholder="you@example.com" />
         </div>
 
-        <!-- PHONE ROW (toggles) -->
         <div id="phoneRow">
           <label class="label">Phone (optional)</label>
           <input id="phoneInput" class="field" type="tel" name="phone" placeholder="(555) 555-5555" />
@@ -137,7 +135,7 @@
         <textarea name="notes" rows="5" class="field" placeholder="Tell us more about how you’d like to help."></textarea>
       </div>
 
-      <!-- Agreement (updated text only) -->
+      <!-- Agreement -->
       <div class="mt-6 rounded-xl card p-4">
         <label class="inline-flex items-start gap-3 text-sm">
           <input type="checkbox" name="agree" required class="mt-1 h-4 w-4">
@@ -153,7 +151,7 @@
 
       <!-- Submit -->
       <div class="mt-6 flex items-center gap-4 flex-wrap">
-        <button type="submit"
+        <button id="submitBtn" type="submit"
                 class="inline-flex items-center justify-center px-5 py-3 text-sm font-semibold rounded-xl
                        bg-amber-500 text-black hover:bg-amber-400 transition shadow">
           Submit Volunteer Form
@@ -163,11 +161,14 @@
           Questions? Email us
         </a>
       </div>
+
+      <!-- Status message -->
+      <p id="form-status" class="mt-4 text-sm"></p>
     </form>
   </main>
 
+  <!-- Toggle email/phone visibility -->
   <script>
-    // Toggle visibility + required for email/phone based on Preferred Contact
     const prefSelect = document.getElementById('prefSelect');
     const prefHelp   = document.getElementById('prefHelp');
     const emailRow   = document.getElementById('emailRow');
@@ -177,14 +178,12 @@
 
     function syncContactUI() {
       if (prefSelect.value === 'Phone') {
-        // Show phone, hide email
         phoneRow.classList.remove('hidden');
         emailRow.classList.add('hidden');
         phoneInput.required = true;
         emailInput.required = false;
         prefHelp.textContent = "We’ll use your phone number to reach you.";
       } else {
-        // Show email, hide phone
         emailRow.classList.remove('hidden');
         phoneRow.classList.add('hidden');
         emailInput.required = true;
@@ -192,10 +191,55 @@
         prefHelp.textContent = "We’ll use your email address to reach you.";
       }
     }
-
-    // Default selection is Email → show email, hide phone
     syncContactUI();
     prefSelect.addEventListener('change', syncContactUI);
+  </script>
+
+  <!-- Prevent redirect + show inline status with spinner -->
+  <script>
+    const form = document.querySelector("form");
+    const status = document.getElementById("form-status");
+    const submitBtn = document.getElementById("submitBtn");
+    let originalBtnText = submitBtn.innerHTML;
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const data = new FormData(form);
+
+      // Show spinner / disable button
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<svg class="animate-spin h-5 w-5 mr-2 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4l3-3-3-3v4a12 12 0 00-12 12h4z"></path></svg> Sending...';
+
+      try {
+        const res = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          status.textContent = "✅ Thanks for volunteering! We’ll be in touch soon.";
+          status.className = "mt-4 text-sm text-green-400";
+          form.reset();
+
+          // Auto-hide after 6 seconds
+          setTimeout(() => {
+            status.textContent = "";
+          }, 6000);
+        } else {
+          const out = await res.json().catch(() => ({}));
+          status.textContent = out.errors ? out.errors.map(e => e.message).join(", ") : "Oops, something went wrong.";
+          status.className = "mt-4 text-sm text-red-400";
+        }
+      } catch (err) {
+        status.textContent = "Network error. Please try again.";
+        status.className = "mt-4 text-sm text-red-400";
+      } finally {
+        // Reset button
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+      }
+    });
   </script>
 </body>
 </html>
