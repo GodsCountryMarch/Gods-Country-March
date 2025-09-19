@@ -19,7 +19,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);} 
     gtag('js', new Date());
-
     gtag('config', 'G-M2C2ELC9HJ');
   </script>
 
@@ -27,9 +26,7 @@
   <style>
     html { scroll-behavior: smooth; }
     section[id] { scroll-margin-top: 96px; }
-    .title-pop {
-      text-shadow: 0px 16px rgba(0,0,0,.5);
-    }
+    .title-pop { text-shadow: 0px 16px rgba(0,0,0,.5); }
   </style>
   </head>
   <body class="bg-slate-950 text-white selection:bg-amber-400 selection:text-black">
@@ -52,7 +49,7 @@
             <span class="hidden sm:inline opacity-40">•</span>
             <a href="volunteer.html" class="hover:text-amber-400">Volunteer</a>
             <span class="hidden sm:inline opacity-40">•</span>
-            <!-- NEW: Merch button (external store link) -->
+            <!-- Merch button -->
             <a href="https://godscountrygear.printful.me/" target="_blank" rel="noopener" class="hover:text-amber-400">Merch</a>
             <span class="hidden sm:inline opacity-40">•</span>
             <a href="https://donorbox.org/2025-gods-country-march" target="_blank" rel="noopener" class="hover:text-amber-400">Donate</a>
@@ -210,7 +207,7 @@
         Your donations help cover permits, sound, and logistics. Thank you for supporting this peaceful witness.
       </p>
       <div class="mt-8">
-        <a href="https://donorbox.org/2025-gods-country-march" target="_blank"
+        <a href="https://donorbox.org/2025-gods-country-march" target="_blank" rel="noopener"
            class="inline-flex items-center px-6 py-3 text-lg font-semibold text-white
                   bg-black rounded-full shadow-lg hover:bg-amber-500 hover:text-black transition">
           Donate Now
@@ -274,46 +271,53 @@
       </div>
     </footer>
 
+    <!-- Safer countdown & year script -->
     <script>
-      // Footer year
-      document.getElementById('y').textContent = new Date().getFullYear();
+      (function () {
+        // Footer year
+        var yEl = document.getElementById('y');
+        if (yEl) yEl.textContent = new Date().getFullYear();
 
-      // --- Countdown to Oct 14, 2025 6:00 PM MDT (America/Boise is MDT on this date = UTC-06:00) ---
-      const eventInstant = new Date('2025-10-14T18:00:00-06:00').getTime();
-      const elDays  = document.getElementById('cd-days');
-      const elHours = document.getElementById('cd-hours');
-      const elMins  = document.getElementById('cd-mins');
-      const elSecs  = document.getElementById('cd-secs');
-      const elDone  = document.getElementById('cd-done');
+        // Grab countdown elements
+        var elDays  = document.getElementById('cd-days');
+        var elHours = document.getElementById('cd-hours');
+        var elMins  = document.getElementById('cd-mins');
+        var elSecs  = document.getElementById('cd-secs');
+        var elDone  = document.getElementById('cd-done');
 
-      function updateCountdown() {
-        const now = Date.now();
-        let diff = eventInstant - now;
+        // If countdown isn't on this page, exit quietly
+        if (!elDays || !elHours || !elMins || !elSecs) return;
 
-        if (diff <= 0) {
-          elDays.textContent = elHours.textContent = elMins.textContent = elSecs.textContent = '00';
-          elDone.classList.remove('hidden');
-          clearInterval(timer);
-          return;
+        // Event time: Oct 14, 2025 6:00 PM in Boise (MDT) = Oct 15, 2025 00:00:00 UTC
+        var eventInstant = Date.UTC(2025, 9, 15, 0, 0, 0); // months are 0-based (9 = October)
+
+        function updateCountdown() {
+          var now = Date.now();
+          var diff = eventInstant - now;
+
+          if (diff <= 0) {
+            elDays.textContent = elHours.textContent = elMins.textContent = elSecs.textContent = '00';
+            if (elDone) elDone.classList.remove('hidden');
+            clearInterval(timer);
+            return;
+          }
+
+          var sec = 1000, min = 60 * sec, hr = 60 * min, day = 24 * hr;
+
+          var d = Math.floor(diff / day); diff %= day;
+          var h = Math.floor(diff / hr);  diff %= hr;
+          var m = Math.floor(diff / min); diff %= min;
+          var s = Math.floor(diff / sec);
+
+          elDays.textContent  = String(d).padStart(2, '0');
+          elHours.textContent = String(h).padStart(2, '0');
+          elMins.textContent  = String(m).padStart(2, '0');
+          elSecs.textContent  = String(s).padStart(2, '0');
         }
 
-        const sec = 1000;
-        const min = 60 * sec;
-        const hr  = 60 * min;
-        const day = 24 * hr;
-
-        const d = Math.floor(diff / day);   diff %= day;
-        const h = Math.floor(diff / hr);    diff %= hr;
-        const m = Math.floor(diff / min);   diff %= min;
-        const s = Math.floor(diff / sec);
-
-        elDays.textContent  = String(d).padStart(2,'0');
-        elHours.textContent = String(h).padStart(2,'0');
-        elMins.textContent  = String(m).padStart(2,'0');
-        elSecs.textContent  = String(s).padStart(2,'0');
-      }
-      const timer = setInterval(updateCountdown, 1000);
-      updateCountdown();
+        var timer = setInterval(updateCountdown, 1000);
+        updateCountdown();
+      })();
     </script>
   </body>
 </html>
