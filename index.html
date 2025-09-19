@@ -3,36 +3,29 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <title>God’s Country March</title>
 
-    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Fav / Meta -->
-    <meta name="description" content="The God’s Country March unites Idaho in faith, freedom, and community. Join us for prayer, worship, and a peaceful march at the Idaho State Capitol." />
-    <meta property="og:title" content="God’s Country March" />
-    <meta property="og:description" content="A peaceful march uniting Idaho in faith and freedom." />
-    <meta property="og:image" content="/BoiseCrossandCapital.jpeg" />
-    <meta property="og:type" content="website" />
+    <meta name="description" content="The God’s Country March unites Idaho in faith, freedom, and community. Join us for prayer, worship, and a peaceful march at the Idaho State Capitol.">
+    <meta property="og:title" content="God’s Country March">
+    <meta property="og:description" content="A peaceful march uniting Idaho in faith and freedom.">
+    <meta property="og:image" content="/BoiseCrossandCapital.jpeg">
+    <meta property="og:type" content="website">
 
-    <!-- Global UX helpers -->
     <style>
       html{scroll-behavior:smooth}
-      /* keep anchors from tucking under fixed header */
       section[id]{scroll-margin-top:96px}
     </style>
   </head>
 
   <body class="bg-slate-950 text-white selection:bg-amber-300 selection:text-slate-900">
-    <!-- ===================== NAV ===================== -->
+    <!-- NAV -->
     <header class="fixed top-0 inset-x-0 z-50">
       <div class="mx-auto max-w-7xl px-4">
         <div class="mt-4 mb-2 flex items-center justify-between rounded-2xl bg-black/90 text-white backdrop-blur px-4 py-3 shadow-xl ring-1 ring-white/10">
-          <!-- Brand -->
           <a href="/" class="font-black tracking-tight text-base sm:text-lg">God’s Country March</a>
 
-          <!-- Desktop nav -->
           <nav class="hidden md:flex items-center gap-6 text-sm">
             <a class="hover:opacity-90" href="/mission.html">Mission &amp; Vision</a>
             <a class="hover:opacity-90" href="/sponsors.html">Sponsors &amp; Supporters</a>
@@ -42,13 +35,12 @@
             <a class="hover:opacity-90" href="#donate">Donate</a>
           </nav>
 
-          <!-- Desktop RSVP -->
           <a href="#rsvp"
              class="hidden md:inline-flex items-center justify-center px-4 py-2 text-sm font-semibold rounded-2xl shadow hover:shadow-lg transition active:scale-[.99] bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-white/40">
             RSVP
           </a>
 
-          <!-- Mobile hamburger -->
+          <!-- Hamburger -->
           <button id="menuBtn"
                   class="md:hidden inline-flex items-center justify-center rounded-xl p-2 ring-1 ring-white/15 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/30"
                   aria-controls="mobileMenu" aria-expanded="false">
@@ -61,15 +53,12 @@
       </div>
     </header>
 
-    <!-- Spacer so content doesn’t hide behind the fixed header -->
     <div class="h-24"></div>
 
-    <!-- Mobile menu panel -->
-    <div id="mobileMenu" class="fixed inset-0 z-50 hidden md:hidden">
-      <!-- Backdrop -->
+    <!-- Mobile drawer (z raised to sit above everything) -->
+    <div id="mobileMenu" class="fixed inset-0 z-[60] hidden md:hidden">
       <div id="menuBackdrop" class="absolute inset-0 bg-black/60"></div>
 
-      <!-- Panel -->
       <div class="ml-auto h-full w-80 max-w-[85vw] bg-slate-900 text-white shadow-2xl ring-1 ring-white/10 flex flex-col">
         <div class="p-4 flex items-center justify-between border-b border-white/10">
           <span class="font-semibold">Menu</span>
@@ -98,215 +87,16 @@
       </div>
     </div>
 
-    <!-- ===================== HERO ===================== -->
+    <!-- HERO -->
     <section id="home" class="relative isolate pt-10 text-white overflow-hidden">
-      <!-- Background -->
       <div class="absolute inset-0 -z-10 bg-center bg-cover"
            style="background-image:url('/BoiseCrossandCapital.jpeg'); background-position:50% 35%;"></div>
       <div class="absolute inset-0 -z-10 bg-black/45"></div>
 
       <div class="mx-auto max-w-7xl px-4 py-20 sm:py-24 text-center">
-        <!-- Big title that scales on mobile -->
-        <h1
-          class="font-black tracking-tight leading-[0.95] drop-shadow-[0_3px_16px_rgba(0,0,0,0.6)]
-                 text-[clamp(2.2rem,7.5vw,5.2rem)] md:text-[clamp(3rem,5vw,6rem)]">
+        <h1 class="font-black tracking-tight leading-[0.95] drop-shadow-[0_3px_16px_rgba(0,0,0,0.6)]
+                   text-[clamp(2.2rem,7.5vw,5.2rem)] md:text-[clamp(3rem,5vw,6rem)]">
           GOD’S COUNTRY MARCH
         </h1>
 
-        <p class="mt-3 text-xs sm:text-sm text-white/90">
-          Uniting Idaho in faith, freedom, and community
-        </p>
-
-        <!-- Date pill -->
-        <a href="#details"
-           class="mt-6 inline-flex items-center gap-2 rounded-full border border-white/20
-                  bg-black/70 px-4 py-2 text-sm shadow backdrop-blur hover:bg-black/80">
-          <span class="h-2 w-2 rounded-full bg-amber-400"></span>
-          Tue, Oct 14, 2025 • 6:00 PM • Idaho State Capitol Steps
-        </a>
-
-        <!-- Tagline -->
-        <p class="mt-6 text-base sm:text-lg max-w-3xl mx-auto opacity-95">
-          Idaho’s first God’s Country March. Let’s make Idaho the leader in what a God-centered country looks like.
-          Honor the mission that Charlie started. Add your voice to the Capitol steps on October 14th. This is a
-          movement of faith, and a stand against those who would try to silence us.
-        </p>
-
-        <!-- CTAs -->
-        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-          <a href="#rsvp"
-             class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 text-sm font-semibold rounded-2xl
-                    shadow hover:shadow-lg transition active:scale-[.99] bg-white text-slate-900">
-            Join the March
-          </a>
-          <a href="#donate"
-             class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 text-sm font-semibold rounded-2xl
-                    shadow hover:shadow-lg transition active:scale-[.99] bg-black/70 border border-white/20">
-            Support the Movement
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== ABOUT ===================== -->
-    <section id="about" class="mx-auto max-w-7xl px-4 py-16">
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-white drop-shadow-md tracking-wide text-center">
-        What is the God’s Country March?
-      </h2>
-      <p class="mt-4 max-w-3xl mx-auto text-lg leading-relaxed text-gray-200 text-center">
-        This is a public witness of faith and freedom in Idaho. We gather to take a stand and celebrate the freedoms
-        God has given each person in our nation. We honor Christ, and we honor Charlie. We are God’s Country. We are Charlie.
-      </p>
-
-      <!-- Pillars -->
-      <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div class="rounded-2xl bg-black/70 text-white p-5 shadow-sm ring-1 ring-white/20">
-          <p class="text-sm font-semibold opacity-80">Faith</p>
-          <p class="mt-1 font-medium">Prayer, worship, and public witness to Christ.</p>
-        </div>
-        <div class="rounded-2xl bg-black/70 text-white p-5 shadow-sm ring-1 ring-white/20">
-          <p class="text-sm font-semibold opacity-80">Freedom</p>
-          <p class="mt-1 font-medium">Celebrating the freedoms God has given our nation.</p>
-        </div>
-        <div class="rounded-2xl bg-black/70 text-white p-5 shadow-sm ring-1 ring-white/20">
-          <p class="text-sm font-semibold opacity-80">Community</p>
-          <p class="mt-1 font-medium">Serving families and neighbors across Idaho.</p>
-        </div>
-      </div>
-
-      <!-- Event info cards -->
-      <div id="details" class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div class="rounded-2xl bg-black/70 text-white p-5 shadow-sm ring-1 ring-white/20">
-          <p class="text-sm font-semibold opacity-80">When</p>
-          <p class="mt-1 font-bold">Tue, Oct 14, 2025 • 6:00 PM</p>
-        </div>
-        <div class="rounded-2xl bg-black/70 text-white p-5 shadow-sm ring-1 ring-white/20">
-          <p class="text-sm font-semibold opacity-80">Where</p>
-          <p class="mt-1 font-bold">Idaho State Capitol Steps, Boise</p>
-        </div>
-        <div class="rounded-2xl bg-black/70 text-white p-5 shadow-sm ring-1 ring-white/20">
-          <p class="text-sm font-semibold opacity-80">Cost</p>
-          <p class="mt-1 font-bold">Free — all are welcome</p>
-        </div>
-        <div class="rounded-2xl bg-black/70 text-white p-5 shadow-sm ring-1 ring-white/20">
-          <p class="text-sm font-semibold opacity-80">Bring</p>
-          <p class="mt-1 font-bold">Signs, Friends, Family, Candles, Flags</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== SCHEDULE ===================== -->
-    <section class="bg-white text-slate-800">
-      <div class="mx-auto max-w-7xl px-4 py-16">
-        <h2 class="text-2xl sm:text-3xl font-bold">Schedule & Details</h2>
-        <ul class="mt-4 space-y-2 text-slate-700">
-          <li><span class="font-semibold">6:00 PM:</span> Gather, moment of silence for Charlie</li>
-          <li><span class="font-semibold">6:10 PM:</span> Speakers and Sponsors</li>
-          <li><span class="font-semibold">7:00 PM:</span> March begins</li>
-          <li><span class="font-semibold">8:00 PM:</span> Meet back at the Capitol</li>
-          <li><span class="font-semibold">8:15 PM:</span> Closing remarks</li>
-          <li><span class="font-semibold">Notes:</span> This is a gathering of believers and patriots. All are welcome. Please remain peaceful.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ===================== DONATE ===================== -->
-    <section id="donate" class="py-16 text-center bg-gray-900 text-white">
-      <h2 class="text-3xl font-extrabold drop-shadow-md">Support the March</h2>
-      <p class="mt-4 text-lg max-w-2xl mx-auto text-gray-300">
-        Your donations help cover permits, sound, and logistics. Thank you for supporting this peaceful witness.
-      </p>
-      <div class="mt-8">
-        <a href="https://donorbox.org/2025-gods-country-march" target="_blank"
-           class="inline-flex items-center px-6 py-3 text-lg font-semibold text-white
-                  bg-black rounded-full shadow-lg hover:bg-amber-500 hover:text-black transition">
-          Donate Now
-        </a>
-      </div>
-    </section>
-
-    <!-- ===================== RSVP ===================== -->
-    <section id="rsvp" class="py-20 bg-black text-white text-center">
-      <h2 class="text-3xl font-extrabold drop-shadow-md">RSVP to get updates</h2>
-      <p class="mt-4 text-lg text-gray-300">Sign up to receive updates about speakers, details, and reminders for the March.</p>
-
-      <form action="https://formspree.io/f/xblavkrd" method="POST" class="mt-8 max-w-md mx-auto space-y-4 text-left">
-        <input type="text" name="name" placeholder="Full Name" required
-               class="w-full px-4 py-3 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-amber-400" />
-        <input type="email" name="email" placeholder="Email" required
-               class="w-full px-4 py-3 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-amber-400" />
-        <textarea name="message" placeholder="Message (optional)" rows="3"
-                  class="w-full px-4 py-3 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-amber-400"></textarea>
-        <button type="submit"
-                class="w-full bg-amber-500 text-black font-bold py-3 px-6 rounded-md shadow-md hover:bg-amber-400 transition">
-          RSVP
-        </button>
-      </form>
-    </section>
-
-    <!-- ===================== VISION STRIP ===================== -->
-    <section id="vision" class="bg-gradient-to-b from-slate-100 to-white py-20 text-slate-900">
-      <div class="mx-auto max-w-4xl text-center px-4">
-        <h2 class="text-3xl sm:text-4xl font-extrabold mb-6">
-          God’s Country is More Than One Event
-        </h2>
-        <p class="text-lg text-slate-700 leading-relaxed mb-12">
-          We’re building a foundation that organizes prayer, outreach, and community action across Idaho and beyond.
-          This is the beginning of a movement, not just a march.
-        </p>
-
-        <div class="grid gap-6 sm:grid-cols-3">
-          <div class="rounded-2xl bg-white p-6 shadow-md hover:shadow-lg transition">
-            <h3 class="font-semibold text-slate-900 mb-2">Faith Gatherings</h3>
-            <p class="text-slate-600 text-sm">Keeping the witness alive with public gatherings of faith and unity.</p>
-          </div>
-          <div class="rounded-2xl bg-white p-6 shadow-md hover:shadow-lg transition">
-            <h3 class="font-semibold text-slate-900 mb-2">Community Support</h3>
-            <p class="text-slate-600 text-sm">Food drives, prayer nights, and support for local families.</p>
-          </div>
-          <div class="rounded-2xl bg-white p-6 shadow-md hover:shadow-lg transition">
-            <h3 class="font-semibold text-slate-900 mb-2">Discipleship</h3>
-            <p class="text-slate-600 text-sm">Resources, workshops, and small groups that strengthen discipleship.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== FOOTER ===================== -->
-    <footer class="bg-black">
-      <div class="mx-auto max-w-7xl px-4 py-10 text-white/80 text-center space-y-2">
-        <p>© <span id="y"></span> God’s Country March • <a href="#donate" class="underline">Support the March</a></p>
-        <p>Questions? <a class="underline" href="mailto:GodsCountryMarch@gmail.com">GodsCountryMarch@gmail.com</a></p>
-      </div>
-    </footer>
-
-    <!-- ===================== JS: year + mobile menu ===================== -->
-    <script>
-      document.getElementById('y').textContent = new Date().getFullYear();
-
-      const menuBtn = document.getElementById('menuBtn');
-      const menu = document.getElementById('mobileMenu');
-      const closeBtn = document.getElementById('menuClose');
-      const backdrop = document.getElementById('menuBackdrop');
-
-      function openMenu() {
-        menu.classList.remove('hidden');
-        menuBtn.setAttribute('aria-expanded', 'true');
-        document.body.style.overflow = 'hidden';
-      }
-      function closeMenu() {
-        menu.classList.add('hidden');
-        menuBtn.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      }
-
-      if (menuBtn) menuBtn.addEventListener('click', openMenu);
-      if (closeBtn) closeBtn.addEventListener('click', closeMenu);
-      if (backdrop) backdrop.addEventListener('click', closeMenu);
-      window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
-
-      // Close the drawer after tapping a link (better on mobile)
-      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-    </script>
-  </body>
-</html>
+        <p class="mt-3 text-xs sm:text-sm tex
