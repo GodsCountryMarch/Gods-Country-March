@@ -18,15 +18,12 @@
     <!-- UX helpers -->
     <style>
       html{scroll-behavior:smooth}
-      section[id]{scroll-margin-top:96px} /* keep anchors from hiding under header */
-      /* hide horizontal scrollbar for the pill nav on mobile */
-      .no-scrollbar::-webkit-scrollbar{display:none}
-      .no-scrollbar{-ms-overflow-style:none;scrollbar-width:none}
+      section[id]{scroll-margin-top:96px} /* anchor offset for fixed header */
     </style>
   </head>
 
   <body class="bg-slate-950 text-white selection:bg-amber-300 selection:text-slate-900">
-    <!-- ================= NAV (no hamburger) ================= -->
+    <!-- ================= NAV (wraps on mobile; no hamburger) ================= -->
     <header class="fixed top-0 inset-x-0 z-50">
       <div class="mx-auto max-w-7xl px-4">
         <div class="mt-4 mb-2 rounded-2xl bg-black/90 text-white backdrop-blur px-4 py-3 shadow-xl ring-1 ring-white/10">
@@ -35,21 +32,36 @@
             <a href="/" class="font-black tracking-tight text-base sm:text-lg">God’s Country March</a>
           </div>
 
-          <!-- Pill links (horizontally scrollable on small screens) -->
-          <nav aria-label="Primary" class="mt-2 -mx-1 flex gap-2 overflow-x-auto no-scrollbar py-1 text-sm">
-            <a href="/mission.html" class="px-3 py-1 rounded-full hover:bg-white/10 whitespace-nowrap">Mission &amp; Vision</a>
-            <a href="/sponsors.html" class="px-3 py-1 rounded-full hover:bg-white/10 whitespace-nowrap">Sponsors &amp; Supporters</a>
-            <a href="/gallery.html"  class="px-3 py-1 rounded-full hover:bg-white/10 whitespace-nowrap">Photos</a>
-            <a href="/blog.html"     class="px-3 py-1 rounded-full hover:bg-white/10 whitespace-nowrap">Blog</a>
-            <a href="/volunteer.html"class="px-3 py-1 rounded-full hover:bg-white/10 whitespace-nowrap">Volunteer</a>
-            <a href="#donate"        class="px-3 py-1 rounded-full hover:bg-white/10 whitespace-nowrap">Donate</a>
-            <a href="#rsvp"          class="px-3 py-1 rounded-full bg-white text-slate-900 hover:opacity-90 whitespace-nowrap">RSVP</a>
+          <!-- MOBILE: grid of buttons (fully visible & tap-friendly)
+               SM+   : pill row -->
+          <nav aria-label="Primary" class="mt-2">
+            <!-- Mobile grid -->
+            <div class="grid grid-cols-2 gap-2 sm:hidden">
+              <a href="/mission.html"        class="px-3 py-2 rounded-xl border border-white/10 bg-white/0 hover:bg-white/10 text-sm text-center">Mission &amp; Vision</a>
+              <a href="/sponsors.html"       class="px-3 py-2 rounded-xl border border-white/10 bg-white/0 hover:bg-white/10 text-sm text-center">Sponsors &amp; Supporters</a>
+              <a href="/gallery.html"        class="px-3 py-2 rounded-xl border border-white/10 bg-white/0 hover:bg-white/10 text-sm text-center">Photos</a>
+              <a href="/blog.html"           class="px-3 py-2 rounded-xl border border-white/10 bg-white/0 hover:bg-white/10 text-sm text-center">Blog</a>
+              <a href="/volunteer.html"      class="px-3 py-2 rounded-xl border border-white/10 bg-white/0 hover:bg-white/10 text-sm text-center">Volunteer</a>
+              <a href="#donate"              class="px-3 py-2 rounded-xl border border-white/10 bg-white/0 hover:bg-white/10 text-sm text-center">Donate</a>
+              <a href="#rsvp"                class="col-span-2 px-3 py-2 rounded-xl bg-white text-slate-900 text-sm font-semibold text-center hover:opacity-90">RSVP</a>
+            </div>
+
+            <!-- Tablet / Desktop pill row -->
+            <div class="hidden sm:flex gap-2 overflow-visible py-1 text-sm">
+              <a href="/mission.html"        class="px-3 py-1 rounded-full hover:bg-white/10 whitespace-nowrap">Mission &amp; Vision</a>
+              <a href="/sponsors.html"       class="px-3 py-1 rounded-full hover:bg-white/10 whitespace-nowrap">Sponsors &amp; Supporters</a>
+              <a href="/gallery.html"        class="px-3 py-1 rounded-full hover:bg-white/10 whitespace-nowrap">Photos</a>
+              <a href="/blog.html"           class="px-3 py-1 rounded-full hover:bg-white/10 whitespace-nowrap">Blog</a>
+              <a href="/volunteer.html"      class="px-3 py-1 rounded-full hover:bg-white/10 whitespace-nowrap">Volunteer</a>
+              <a href="#donate"              class="px-3 py-1 rounded-full hover:bg-white/10 whitespace-nowrap">Donate</a>
+              <a href="#rsvp"                class="px-3 py-1 rounded-full bg-white text-slate-900 hover:opacity-90 whitespace-nowrap">RSVP</a>
+            </div>
           </nav>
         </div>
       </div>
     </header>
 
-    <!-- Spacer under fixed header -->
+    <!-- Spacer -->
     <div class="h-24"></div>
 
     <!-- ================= HERO ================= -->
@@ -106,7 +118,6 @@
         God has given each person in our nation. We honor Christ, and we honor Charlie. We are God’s Country. We are Charlie.
       </p>
 
-      <!-- Pillars -->
       <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div class="rounded-2xl bg-black/70 text-white p-5 shadow-sm ring-1 ring-white/20">
           <p class="text-sm font-semibold opacity-80">Faith</p>
@@ -122,7 +133,6 @@
         </div>
       </div>
 
-      <!-- Event details -->
       <div id="details" class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div class="rounded-2xl bg-black/70 text-white p-5 shadow-sm ring-1 ring-white/20">
           <p class="text-sm font-semibold opacity-80">When</p>
@@ -229,7 +239,6 @@
     </footer>
 
     <script>
-      // year
       document.getElementById('y').textContent = new Date().getFullYear();
     </script>
   </body>
