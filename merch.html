@@ -1,195 +1,187 @@
-// Replace LOGO_URL below with your actual logo image URL.
-// Example: const LOGO_URL = "https://your-domain.com/assets/gcm-logo.png";
+<!doctype html>
+<html lang="en">
+  <head>
+     <meta charset="utf-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1" />
+     <title>Merch — God’s Country March • Boise, Idaho</title>
+     <meta name="description" content="Official merch for the God’s Country March. Hats, tees, hoodies, and beanies that help fund the event. All proceeds support the march; any remaining funds are donated to TPUSA and the Kirk Family." />
 
-const LOGO_URL = "PLACEHOLDER_LOGO_URL";
-const STORE_URL = "https://godscountrygear.printful.me/";
+     <!-- Social / OpenGraph -->
+     <meta property="og:title" content="God’s Country March — Merch" />
+     <meta property="og:description" content="Grab official hats, tees, hoodies, and beanies. Proceeds support the Oct 14, 2025 event; remaining funds go to TPUSA and the Kirk Family." />
+     <meta property="og:type" content="website" />
+     <meta property="og:url" content="https://godscountrymarch.com/merch.html" />
+     <meta property="og:image" content="/BoiseCrossandCapital.jpeg" />
 
-export default function MerchPage() {
-  const hasLogo = LOGO_URL && LOGO_URL !== "PLACEHOLDER_LOGO_URL";
-  const year = new Date().getFullYear();
+     <!-- Tailwind -->
+     <script src="https://cdn.tailwindcss.com"></script>
+     <style>
+       html { scroll-behavior: smooth; }
+       section[id] { scroll-margin-top: 96px; }
+       .card:hover { transform: translateY(-2px); }
+     </style>
+  </head>
+  <body class="bg-slate-950 text-white selection:bg-amber-400 selection:text-black">
 
-  return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
-      {/* Header */}
-      <header className="sticky top-0 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur border-b border-slate-200/70 dark:border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
-          <a href="/" className="flex items-center gap-3 shrink-0">
-            {hasLogo ? (
-              <img src={LOGO_URL} alt="God's Country March" className="h-9 w-auto" />
-            ) : (
-              <div className="h-9 w-40 grid place-items-center rounded-md border border-dashed border-slate-300 dark:border-slate-700 text-xs uppercase tracking-wide text-slate-500">
-                Add your logo
-              </div>
-            )}
-            <span className="hidden sm:block font-extrabold tracking-tight">God’s Country March</span>
-          </a>
-
-          <nav className="hidden md:flex items-center gap-6">
-            <a href="/#details" className="hover:opacity-80">Event</a>
-            <a href="/#rsvp" className="hover:opacity-80">RSVP</a>
-            <a href="/blog.html" className="hover:opacity-80">Blog</a>
-            <a
-              href={STORE_URL}
-              target="_blank"
-              rel="noopener"
-              className="font-semibold px-3 py-1.5 rounded-xl bg-red-600 text-white shadow hover:shadow-md active:scale-[.98] focus:outline-none focus:ring-2 focus:ring-red-400"
-            >
-              Shop Merch
-            </a>
+    <!-- top nav (copied from index page) -->
+    <header class="fixed top-0 inset-x-0 z-50">
+      <div class="mx-auto max-w-7xl px-4">
+        <div class="mt-3 mb-2 flex justify-center">
+          <nav class="w-full rounded-2xl bg-black/70 backdrop-blur text-white shadow ring-1 ring-white/10
+                      px-3 sm:px-4 py-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[13px] sm:text-sm">
+            <a href="index.html" class="hover:text-amber-400 underline">God’s Country March</a>
+            <span class="hidden sm:inline opacity-40">•</span>
+            <a href="mission.html" class="hover:text-amber-400">Mission &amp; Vision</a>
+            <span class="hidden sm:inline opacity-40">•</span>
+            <a href="sponsors.html" class="hover:text-amber-400">Sponsors &amp; Supporters</a>
+            <span class="hidden sm:inline opacity-40">•</span>
+            <a href="gallery.html" class="hover:text-amber-400">Photos</a>
+            <span class="hidden sm:inline opacity-40">•</span>
+            <a href="blog.html" class="hover:text-amber-400">Blog</a>
+            <span class="hidden sm:inline opacity-40">•</span>
+            <a href="volunteer.html" class="hover:text-amber-400">Volunteer</a>
+            <span class="hidden sm:inline opacity-40">•</span>
+            <!-- Merch link points to Printful storefront to complete checkout -->
+            <a href="https://godscountrygear.printful.me/" target="_blank" rel="noopener" class="hover:text-amber-400">Merch</a>
+            <span class="hidden sm:inline opacity-40">•</span>
+            <a href="https://donorbox.org/2025-gods-country-march" target="_blank" rel="noopener" class="hover:text-amber-400">Donate</a>
+            <span class="hidden sm:inline opacity-40">•</span>
+            <a href="index.html#rsvp" class="hover:text-amber-400">RSVP</a>
           </nav>
         </div>
-      </header>
+      </div>
+    </header>
+    <div class="h-20"></div>
 
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-red-700 via-orange-600 to-amber-500 opacity-15 pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
-            <div>
-              <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight">
-                Official God’s Country March Merch
-              </h1>
-              <p className="mt-4 text-lg leading-relaxed max-w-prose">
-                Bold, faith-forward gear for the march and beyond. Printed on demand and shipped directly to you—no inventory, no delays.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <a
-                  href={STORE_URL}
-                  target="_blank"
-                  rel="noopener"
-                  className="inline-flex items-center justify-center px-5 py-3 text-base font-bold rounded-2xl shadow hover:shadow-lg active:scale-[.99] bg-red-600 text-white focus:outline-none focus:ring-2 focus:ring-red-400"
-                >
-                  Shop the Store
-                </a>
-                <a
-                  href="#faq"
-                  className="inline-flex items-center justify-center px-5 py-3 text-base font-semibold rounded-2xl border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800"
-                >
-                  Shipping & FAQs
-                </a>
-              </div>
-              <p className="mt-4 text-sm text-slate-600 dark:text-slate-400">Proceeds support the event.</p>
+    <!-- HERO -->
+    <section class="relative isolate pt-24 sm:pt-28 text-white overflow-hidden">
+      <div class="absolute inset-0 -z-10 bg-center bg-cover" style="background-image:url('/BoiseCrossandCapital.jpeg'); background-position:50% 35%;"></div>
+      <div class="absolute inset-0 -z-10 bg-black/55"></div>
+
+      <div class="mx-auto max-w-7xl px-4 py-14 sm:py-20">
+        <div class="grid lg:grid-cols-2 items-center gap-10">
+          <div>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight">Official Merch</h1>
+            <p class="mt-4 text-slate-200 text-base sm:text-lg max-w-prose">Wear the message. Every purchase helps fund the march on <span class="font-semibold text-white">October 14, 2025 at 6:00 PM</span> on the Idaho State Capitol steps.</p>
+            <p class="mt-2 text-slate-300 text-sm max-w-prose">All proceeds go directly toward covering event costs. Any funds remaining after the event will be donated to <span class="font-semibold text-white">Turning Point USA</span> and the <span class="font-semibold text-white">Kirk Family</span> in Charlie’s honor.</p>
+            <div class="mt-6 flex flex-wrap items-center gap-3">
+              <a href="#catalog" class="inline-flex items-center justify-center rounded-2xl bg-white text-slate-900 px-4 py-2 text-sm font-semibold shadow hover:shadow-lg active:scale-[.99]">Shop Catalog</a>
+              <a href="/donate.html" class="inline-flex items-center justify-center rounded-2xl border border-white/20 px-4 py-2 text-sm font-semibold hover:bg-white/5">Donate Instead</a>
             </div>
-
-            {/* Feature card / teaser */}
-            <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-md">
-              <div className="aspect-[4/3] w-full rounded-2xl bg-slate-100 dark:bg-slate-800 grid place-items-center text-center p-6">
-                <div>
-                  <div className="font-bold text-xl">Featured Tee</div>
-                  <div className="mt-2 text-sm opacity-80">“Christ is King” front • Event art back</div>
-                  <div className="mt-4">
-                    <a
-                      href={STORE_URL}
-                      target="_blank"
-                      rel="noopener"
-                      className="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900"
-                    >
-                      View in Store
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <ul className="mt-6 space-y-2 text-sm text-slate-700 dark:text-slate-300">
-                <li>• Premium cotton blends</li>
-                <li>• Printed on demand — no overstock</li>
-                <li>• Secure checkout hosted by our print partner</li>
-              </ul>
+            <p class="mt-3 text-xs text-slate-300">Checkout is securely handled on our Printful store in a new tab.</p>
+          </div>
+          <div class="relative">
+            <div class="aspect-[4/3] rounded-3xl overflow-hidden ring-1 ring-white/15 shadow-xl">
+              <img src="/merch-hero.jpg" alt="Hats, tees, and hoodies for God’s Country March" class="h-full w-full object-cover" />
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      {/* Product teasers */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <h2 className="text-2xl sm:text-3xl font-extrabold">Popular Picks</h2>
-        <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <Card title="“Christ is King” Tee" subtitle="Multiple colors • Unisex" />
-          <Card title="Event Hoodie" subtitle="Warm for October evenings" />
-          <Card title="Stand Bold Cap" subtitle="Low profile • Adjustable" />
-        </div>
-        <div className="mt-8">
-          <a
-            href={STORE_URL}
-            target="_blank"
-            rel="noopener"
-            className="inline-flex items-center justify-center px-5 py-3 text-base font-bold rounded-2xl shadow hover:shadow-lg active:scale-[.99] bg-red-600 text-white focus:outline-none focus:ring-2 focus:ring-red-400"
-          >
-            Browse All Merch
+    <!-- CATALOG -->
+    <section id="catalog" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <!-- Trucker Hat -->
+        <article class="card group rounded-3xl ring-1 ring-white/10 bg-white/5 p-3 shadow-lg transition">
+          <a href="https://godscountrygear.printful.me/product/gods-country-trucker-hat" target="_blank" rel="noopener" class="block rounded-2xl overflow-hidden">
+            <img src="/merch/hat.jpg" alt="God’s Country Trucker Hat" class="h-56 w-full object-cover transition group-hover:opacity-90" />
           </a>
-        </div>
-      </section>
-
-      {/* How it works */}
-      <section className="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-          <h2 className="text-2xl sm:text-3xl font-extrabold">How it works</h2>
-          <div className="mt-6 grid md:grid-cols-3 gap-6">
-            <Step n={1} title="Pick your gear" text="Choose a tee, hoodie, or hat from our partner storefront." />
-            <Step n={2} title="On‑demand printing" text="Your item is printed after purchase—no wasted inventory." />
-            <Step n={3} title="Shipped to you" text="Orders ship directly from our print partner with tracking." />
+          <div class="p-3">
+            <h3 class="font-semibold">God’s Country Trucker Hat</h3>
+            <p class="mt-1 text-sm text-slate-300">Classic embroidered mesh trucker. Adjustable snapback.</p>
+            <div class="mt-3 flex items-center justify-between">
+              <span class="text-lg font-bold">$25</span>
+              <a href="https://godscountrygear.printful.me/product/gods-country-trucker-hat" target="_blank" rel="noopener" class="inline-flex items-center justify-center rounded-xl bg-amber-400 text-slate-900 px-3 py-1.5 text-sm font-semibold shadow hover:shadow-lg active:scale-[.99]">Buy</a>
+            </div>
           </div>
-        </div>
-      </section>
+        </article>
 
-      {/* FAQ */}
-      <section id="faq" className="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-          <h2 className="text-2xl sm:text-3xl font-extrabold">Shipping & FAQs</h2>
-          <dl className="mt-6 space-y-6">
-            <FAQ q="How does fulfillment work?" a="Orders are printed on demand by our print partner and shipped directly to you." />
-            <FAQ q="When will my order ship?" a="Fulfillment time varies by product and demand. You’ll receive tracking via email once it ships." />
-            <FAQ q="Returns & exchanges" a="Misprints/damaged items are replaced—start with the support link on your receipt. For size or preference exchanges, see the policy on our store page." />
-            <FAQ q="Secure checkout" a="Checkout is processed by our print partner for fast, secure payments." />
-          </dl>
-        </div>
-      </section>
+        <!-- Beanie -->
+        <article class="card group rounded-3xl ring-1 ring-white/10 bg-white/5 p-3 shadow-lg transition">
+          <a href="https://godscountrygear.printful.me/product/gods-country-beanie" target="_blank" rel="noopener" class="block rounded-2xl overflow-hidden">
+            <img src="/merch/beanie.jpg" alt="God’s Country Beanie" class="h-56 w-full object-cover transition group-hover:opacity-90" />
+          </a>
+          <div class="p-3">
+            <h3 class="font-semibold">God’s Country Beanie</h3>
+            <p class="mt-1 text-sm text-slate-300">Warm cuffed knit beanie with embroidered design.</p>
+            <div class="mt-3 flex items-center justify-between">
+              <span class="text-lg font-bold">$17</span>
+              <a href="https://godscountrygear.printful.me/product/gods-country-beanie" target="_blank" rel="noopener" class="inline-flex items-center justify-center rounded-xl bg-amber-400 text-slate-900 px-3 py-1.5 text-sm font-semibold shadow hover:shadow-lg active:scale-[.99]">Buy</a>
+            </div>
+          </div>
+        </article>
 
-      {/* Footer */}
-      <footer className="border-t border-slate-200 dark:border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 text-sm text-slate-600 dark:text-slate-400">
-          © {year} God’s Country March — All rights reserved.
-        </div>
-      </footer>
-    </div>
-  );
-}
+        <!-- Hoodie -->
+        <article class="card group rounded-3xl ring-1 ring-white/10 bg-white/5 p-3 shadow-lg transition">
+          <a href="https://godscountrygear.printful.me/product/gods-country-hoodie" target="_blank" rel="noopener" class="block rounded-2xl overflow-hidden">
+            <img src="/merch/hoodie.jpg" alt="God’s Country Hoodie" class="h-56 w-full object-cover transition group-hover:opacity-90" />
+          </a>
+          <div class="p-3">
+            <h3 class="font-semibold">God’s Country Hoodie</h3>
+            <p class="mt-1 text-sm text-slate-300">Midweight fleece-lined hoodie. Multiple sizes and colors.</p>
+            <div class="mt-3 flex items-center justify-between">
+              <span class="text-lg font-bold">Starting at $35.50</span>
+              <a href="https://godscountrygear.printful.me/product/gods-country-hoodie" target="_blank" rel="noopener" class="inline-flex items-center justify-center rounded-xl bg-amber-400 text-slate-900 px-3 py-1.5 text-sm font-semibold shadow hover:shadow-lg active:scale-[.99]">Buy</a>
+            </div>
+          </div>
+        </article>
 
-function Card({ title, subtitle }) {
-  return (
-    <a
-      href={STORE_URL}
-      target="_blank"
-      rel="noopener"
-      className="group block rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-lg"
-    >
-      <div className="aspect-[4/3] bg-slate-100 dark:bg-slate-800 grid place-items-center">
-        <span className="text-sm opacity-70">Product mockup</span>
+        <!-- Youth Hoodie -->
+        <article class="card group rounded-3xl ring-1 ring-white/10 bg-white/5 p-3 shadow-lg transition">
+          <a href="https://godscountrygear.printful.me/product/youth-heavy-blend-hoodie" target="_blank" rel="noopener" class="block rounded-2xl overflow-hidden">
+            <img src="/merch/youth-hoodie.jpg" alt="Youth Heavy Blend Hoodie" class="h-56 w-full object-cover transition group-hover:opacity-90" />
+          </a>
+          <div class="p-3">
+            <h3 class="font-semibold">Youth Heavy Blend Hoodie</h3>
+            <p class="mt-1 text-sm text-slate-300">Cozy fleece hoodie sized for youth.</p>
+            <div class="mt-3 flex items-center justify-between">
+              <span class="text-lg font-bold">$25</span>
+              <a href="https://godscountrygear.printful.me/product/youth-heavy-blend-hoodie" target="_blank" rel="noopener" class="inline-flex items-center justify-center rounded-xl bg-amber-400 text-slate-900 px-3 py-1.5 text-sm font-semibold shadow hover:shadow-lg active:scale-[.99]">Buy</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Unisex Tee -->
+        <article class="card group rounded-3xl ring-1 ring-white/10 bg-white/5 p-3 shadow-lg transition">
+          <a href="https://godscountrygear.printful.me/product/short-sleeve-unisex-t-shirt" target="_blank" rel="noopener" class="block rounded-2xl overflow-hidden">
+            <img src="/merch/tee.jpg" alt="Short Sleeve Unisex Tee" class="h-56 w-full object-cover transition group-hover:opacity-90" />
+          </a>
+          <div class="p-3">
+            <h3 class="font-semibold">Short Sleeve Unisex Tee</h3>
+            <p class="mt-1 text-sm text-slate-300">Soft cotton tee. Sizes XS–3XL. Classic fit.</p>
+            <div class="mt-3 flex items-center justify-between">
+              <span class="text-lg font-bold">Starting at $23</span>
+              <a href="https://godscountrygear.printful.me/product/short-sleeve-unisex-t-shirt" target="_blank" rel="noopener" class="inline-flex items-center justify-center rounded-xl bg-amber-400 text-slate-900 px-3 py-1.5 text-sm font-semibold shadow hover:shadow-lg active:scale-[.99]">Buy</a>
+            </div>
+          </div>
+        </article>
       </div>
-      <div className="p-4">
-        <div className="font-bold">{title}</div>
-        <div className="text-sm opacity-70">{subtitle}</div>
-      </div>
-    </a>
-  );
-}
 
-function Step({ n, title, text }) {
-  return (
-    <div className="rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
-      <div className="flex items-center gap-3">
-        <div className="h-8 w-8 rounded-full bg-slate-900 text-white dark:bg-white dark:text-slate-900 grid place-items-center font-bold">{n}</div>
-        <div className="font-semibold">{title}</div>
+      <!-- Transparency -->
+      <div class="mt-16 rounded-3xl ring-1 ring-white/10 bg-white/5 p-8 text-center">
+        <h2 class="text-2xl font-bold mb-3">Where Your Money Goes</h2>
+        <p class="text-slate-200 max-w-2xl mx-auto">Every purchase is more than merch — it’s fuel for a movement. Proceeds cover sound, permits, staging, and security so the march can be safe and powerful. Anything left after October 14 will be donated to <span class="font-semibold text-white">Turning Point USA</span> and to support the <span class="font-semibold text-white">Kirk Family</span>.</p>
+        <p class="mt-3 text-sm text-slate-300">Thank you for standing with us in faith and freedom. Your support makes this possible.</p>
       </div>
-      <p className="mt-3 text-sm text-slate-700 dark:text-slate-300">{text}</p>
-    </div>
-  );
-}
 
-function FAQ({ q, a }) {
-  return (
-    <div>
-      <dt className="font-bold">{q}</dt>
-      <dd className="mt-2 text-slate-700 dark:text-slate-300">{a}</dd>
-    </div>
-  );
-}
+      <!-- Extra CTA -->
+      <div class="mt-10 flex justify-center">
+        <a href="https://donorbox.org/2025-gods-country-march" target="_blank" rel="noopener" class="inline-flex items-center justify-center rounded-2xl bg-amber-400 text-slate-900 px-6 py-3 text-base font-semibold shadow hover:shadow-lg active:scale-[.99]">Donate Directly</a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black mt-16">
+      <div class="mx-auto max-w-7xl px-4 py-10 text-white/80 text-center space-y-2">
+        <p>© <span id="y"></span> God’s Country March • <a href="https://donorbox.org/2025-gods-country-march" target="_blank" class="underline">Support the March</a></p>
+        <p>Questions? <a class="underline" href="mailto:GodsCountryMarch@gmail.com">GodsCountryMarch@gmail.com</a></p>
+      </div>
+    </footer>
+
+    <script>
+      // Footer year
+      document.getElementById('y').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
