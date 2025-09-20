@@ -85,23 +85,22 @@
         <p class="mt-3 text-xs text-slate-300">Checkout is securely handled on our Printful store in a new tab.</p>
       </div>
 
-     <!-- Right column: logo -->
+    <!-- Right column: logo -->
       <div class="relative flex items-center justify-center">
         <img
           src="https://raw.githubusercontent.com/GodsCountryMarch/Gods-Country-March/main/GodsCountryLogoFinal.png"
           alt="God’s Country Merch Logo"
-          class="w-auto max-h-[28rem] object-contain"
+          class="w-auto max-h-[30rem] object-contain"
           style="
-            /* Darken the artwork slightly and punch contrast */
+            /* Make artwork light so it pops on the dark banner */
             filter:
-              brightness(.82)
-              contrast(1.22)
-              /* Strong outline using layered drop-shadows (all directions) */
-              drop-shadow(0 0 22px rgba(0,0,0,.55))
-              drop-shadow(0 2px 0 rgba(0,0,0,.95))
-              drop-shadow(0 -2px 0 rgba(0,0,0,.95))
-              drop-shadow(2px 0 0 rgba(0,0,0,.95))
-              drop-shadow(-2px 0 0 rgba(0,0,0,.95));
+              invert(1)
+              brightness(1.05)
+              contrast(1.15)
+              /* Soft white halo + subtle depth */
+              drop-shadow(0 0 2px rgba(255,255,255,.85))
+              drop-shadow(0 0 22px rgba(255,255,255,.25))
+              drop-shadow(0 10px 18px rgba(0,0,0,.25));
           "
         />
       </div>
