@@ -12,7 +12,7 @@
 </head>
 <body class="bg-slate-950 text-white selection:bg-amber-400 selection:text-black">
 
-  <!-- top nav (your exact nav, + Memory Wall link) -->
+  <!-- top nav (exactly your nav, just adds Memory Wall) -->
   <header class="fixed top-0 inset-x-0 z-50">
     <div class="mx-auto max-w-7xl px-4">
       <div class="mt-3 mb-2 flex justify-center">
@@ -60,7 +60,7 @@
     </div>
   </section>
 
-  <!-- FORM (glass card) -->
+  <!-- FORM -->
   <section id="share" class="mx-auto max-w-5xl px-4 pb-10">
     <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 sm:p-8">
       <h2 class="text-2xl font-bold">Leave a message</h2>
@@ -68,16 +68,16 @@
 
       <form id="memoryForm" class="mt-6 space-y-4" autocomplete="off">
         <div class="grid sm:grid-cols-2 gap-4">
-          <input type="text" id="name" name="name" placeholder="Full Name" 
-                 class="w-full px-4 py-3 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-amber-400" autocomplete="off" />
+          <input type="text" id="name" name="name" placeholder="Full Name"
+                 class="w-full px-4 py-3 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-amber-400" />
           <input type="text" id="location" name="location" placeholder="City, State (optional)"
-                 class="w-full px-4 py-3 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-amber-400" autocomplete="off" />
+                 class="w-full px-4 py-3 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-amber-400" />
         </div>
 
         <div>
           <textarea id="message" name="message" rows="6" maxlength="800"
                     placeholder="Write your prayer, encouragement, or memory here… (max 800 characters)"
-                    class="w-full px-4 py-3 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-amber-400" autocomplete="off" required></textarea>
+                    class="w-full px-4 py-3 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-amber-400" required></textarea>
           <div class="mt-1 text-xs text-slate-300"><span id="chars">0</span>/800</div>
         </div>
 
@@ -102,7 +102,7 @@
     </div>
   </section>
 
-  <!-- WALL (glass list) -->
+  <!-- WALL -->
   <section id="wall" class="mx-auto max-w-6xl px-4 pb-16">
     <h2 class="text-2xl font-bold mb-4">Messages for the Kirk Family</h2>
 
@@ -112,7 +112,7 @@
     </div>
   </section>
 
-  <!-- Firebase (ES Modules) -->
+  <!-- Firebase -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
@@ -123,7 +123,7 @@
       getStorage, ref, uploadBytes, getDownloadURL
     } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
 
-    // === Your Firebase config (kept exactly as provided) ===
+    // Your Firebase config
     const firebaseConfig = {
       apiKey: "AIzaSyAGwWozUzlpVTE4F_CKNK-eBWa7U18Kxic",
       authDomain: "godscountrymarch-c0e4c.firebaseapp.com",
@@ -139,60 +139,75 @@
     const db = getFirestore(app);
     const storage = getStorage(app);
 
-    // Elements
-    const form = document.getElementById('memoryForm');
-    const nameEl = document.getElementById('name');
-    const locationEl = document.getElementById('location');
-    const messageEl = document.getElementById('message');
-    const fileInput = document.getElementById('photo');
-    const preview = document.getElementById('preview');
-    const progressBar = document.getElementById('progress');
-    const statusEl = document.getElementById('formStatus');
-    const btn = document.getElementById('submitBtn');
-    const wall = document.getElementById('wallList');
-    const wallEmpty = document.getElementById('wallEmpty');
-    const charsEl = document.getElementById('chars');
+    // --- helpers to always access current nodes (important after cloning) ---
+    const el = (id) => document.getElementById(id);
 
-    // Char counter
-    const updateCount = () => charsEl.textContent = messageEl.value.length;
-    messageEl.addEventListener('input', updateCount); updateCount();
+    // character counter (bind to current textarea)
+    function bindCharCounter() {
+      const msg = el('message'), chars = el('chars');
+      const update = () => chars.textContent = msg.value.length;
+      msg.addEventListener('input', update);
+      update();
+    }
+    bindCharCounter();
 
-    // File preview text
-    fileInput.addEventListener('change', () => {
-      const f = fileInput.files[0];
-      preview.textContent = f ? `Selected: ${f.name}` : 'No photo selected';
+    // file preview
+    el('photo').addEventListener('change', () => {
+      const f = el('photo').files[0];
+      el('preview').textContent = f ? `Selected: ${f.name}` : 'No photo selected';
     });
 
-    // Hard-clear helper (beats autofill persistence)
-    function hardClearForm() {
-      form.reset();
-      nameEl.value = '';
-      locationEl.value = '';
-      messageEl.value = '';
-      fileInput.value = '';
-      charsEl.textContent = '0';
-      preview.textContent = 'No photo selected';
+    // HARD CLEAR: replaces inputs with fresh clones to defeat browser value restore
+    function clearInputsHard() {
+      ['name','location','message'].forEach((id) => {
+        const node = el(id);
+        const clone = node.cloneNode(true);
+        clone.value = '';
+        clone.defaultValue = '';
+        node.replaceWith(clone);
+      });
+      // reset file & ui bits
+      el('photo').value = '';
+      el('preview').textContent = 'No photo selected';
+      el('progress').style.width = '0%';
+      el('chars').textContent = '0';
+      // rebind listeners to NEW nodes
+      bindCharCounter();
+      el('photo').addEventListener('change', () => {
+        const f = el('photo').files[0];
+        el('preview').textContent = f ? `Selected: ${f.name}` : 'No photo selected';
+      });
     }
 
-    // Submit
-    form.addEventListener('submit', async (e) => {
+    // SUBMIT
+    el('memoryForm').addEventListener('submit', async (e) => {
       e.preventDefault();
+      const statusEl = el('formStatus');
+      const submitBtn = el('submitBtn');
+      const progressBar = el('progress');
+
       statusEl.textContent = '';
-      btn.disabled = true;
-      btn.classList.add('opacity-60','cursor-not-allowed');
+      submitBtn.disabled = true;
+      submitBtn.classList.add('opacity-60','cursor-not-allowed');
       progressBar.style.width = '0%';
 
-      const name = (nameEl.value || 'Anonymous').trim();
-      const location = (locationEl.value || '').trim();
-      const message = (messageEl.value || '').trim();
-      if (!message) { statusEl.textContent = 'Please enter a message.'; btn.disabled = false; btn.classList.remove('opacity-60','cursor-not-allowed'); return; }
+      const name = (el('name').value || 'Anonymous').trim();
+      const location = (el('location').value || '').trim();
+      const message = (el('message').value || '').trim();
+      if (!message) {
+        statusEl.textContent = 'Please enter a message.';
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('opacity-60','cursor-not-allowed');
+        return;
+      }
 
       try {
+        // optional photo
         let imageUrl = '';
-        const file = fileInput.files[0];
+        const file = el('photo').files[0];
         if (file) {
-          const safeName = `${Date.now()}_${file.name.replace(/[^a-zA-Z0-9._-]/g,'_')}`;
-          const r = ref(storage, `uploads/${safeName}`);
+          const safe = `${Date.now()}_${file.name.replace(/[^a-zA-Z0-9._-]/g,'_')}`;
+          const r = ref(storage, `uploads/${safe}`);
           progressBar.style.width = '40%';
           await uploadBytes(r, file);
           progressBar.style.width = '70%';
@@ -201,14 +216,13 @@
           setTimeout(()=> progressBar.style.width = '0%', 600);
         }
 
+        // save
         await addDoc(collection(db, 'memories'), {
           name, location, message, imageUrl, createdAt: serverTimestamp()
         });
 
-        // ✅ Clear robustly (handles autofill)
-        hardClearForm();
-        // double-clear in next tick for stubborn browsers
-        setTimeout(hardClearForm, 0);
+        // ✅ bullet-proof clear
+        clearInputsHard();
 
         statusEl.textContent = 'Posted! Thank you.';
         setTimeout(()=> statusEl.textContent = '', 2000);
@@ -216,12 +230,14 @@
         console.error(err);
         statusEl.textContent = err?.message || 'Sorry, post failed. Please try again.';
       } finally {
-        btn.disabled = false;
-        btn.classList.remove('opacity-60','cursor-not-allowed');
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('opacity-60','cursor-not-allowed');
       }
     });
 
-    // Live wall
+    // LIVE wall
+    const wall = el('wallList');
+    const wallEmpty = el('wallEmpty');
     const q = query(collection(db, 'memories'), orderBy('createdAt','desc'));
     onSnapshot(q, (snap) => {
       wall.innerHTML = '';
@@ -230,9 +246,9 @@
 
       snap.forEach((doc) => {
         const d = doc.data();
+        const who = [d.name || 'Anonymous', d.location].filter(Boolean).join(' — ');
         const card = document.createElement('article');
         card.className = 'rounded-2xl bg-white/5 ring-1 ring-white/10 p-4 sm:p-5';
-        const who = [d.name || 'Anonymous', d.location].filter(Boolean).join(' — ');
         card.innerHTML = `
           ${d.imageUrl ? `<img src="${d.imageUrl}" alt="attachment" loading="lazy" class="mb-3 max-h-72 w-auto rounded-lg ring-1 ring-white/10" />` : ''}
           <p class="text-sm text-slate-200 whitespace-pre-wrap">${(d.message || '').replace(/</g,'&lt;')}</p>
