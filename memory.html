@@ -1,24 +1,14 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Memory Wall — God’s Country March</title>
-  <meta name="description" content="Leave a message for the Kirk Family — share a prayer, encouragement, memory, or photo. Messages appear on the Memory Wall." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Memory Wall for Charlie | God’s Country March</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    html { scroll-behavior: smooth; }
-    .skeleton {
-      background: linear-gradient(90deg, rgba(255,255,255,0.06) 25%, rgba(255,255,255,0.12) 37%, rgba(255,255,255,0.06) 63%);
-      background-size: 400% 100%;
-      animation: shine 1.4s ease infinite;
-    }
-    @keyframes shine { 0% { background-position: 100% 0 } 100%{ background-position: 0 0 } }
-  </style>
 </head>
-<body class="bg-slate-950 text-white selection:bg-amber-400 selection:text-black">
+<body class="bg-slate-950 text-white">
 
-  <!-- NAV -->
+  <!-- top nav -->
   <header class="fixed top-0 inset-x-0 z-50">
     <div class="mx-auto max-w-7xl px-4">
       <div class="mt-3 mb-2 flex justify-center">
@@ -36,9 +26,9 @@
           <span class="hidden sm:inline opacity-40">•</span>
           <a href="volunteer.html" class="hover:text-amber-400">Volunteer</a>
           <span class="hidden sm:inline opacity-40">•</span>
-          <a href="memory.html" class="hover:text-amber-400 text-amber-400">Memory Wall</a>
-          <span class="hidden sm:inline opacity-40">•</span>
           <a href="merch.html" class="hover:text-amber-400">Merch</a>
+          <span class="hidden sm:inline opacity-40">•</span>
+          <a href="memorywall.html" class="hover:text-amber-400">Memory Wall</a>
           <span class="hidden sm:inline opacity-40">•</span>
           <a href="https://donorbox.org/2025-gods-country-march" target="_blank" rel="noopener" class="hover:text-amber-400">Donate</a>
           <span class="hidden sm:inline opacity-40">•</span>
@@ -50,343 +40,183 @@
   <div class="h-20"></div>
 
   <!-- HERO -->
-  <section class="relative isolate pt-6 sm:pt-8 text-white overflow-hidden">
-    <div class="absolute inset-0 -z-10 bg-center bg-cover" style="background-image:url('/BoiseCrossandCapital.jpeg'); background-position:50% 35%;"></div>
-    <div class="absolute inset-0 -z-10 bg-black/55"></div>
+  <section class="relative isolate pt-16 pb-12 sm:pt-20 sm:pb-16 text-center overflow-hidden">
+    <div class="absolute inset-0 -z-10 bg-center bg-cover" 
+         style="background-image:url('/BoiseCrossandCapital.jpeg'); background-position:50% 40%;">
+    </div>
+    <div class="absolute inset-0 -z-10 bg-black/60"></div>
 
-    <div class="mx-auto max-w-5xl px-4 py-12 sm:py-16 text-center">
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight">Memory Wall for Charlie</h1>
-      <p class="mt-4 text-slate-200 text-lg max-w-3xl mx-auto">
-        Leave a message for the <span class="font-semibold text-white">Kirk Family</span> — share a prayer, encouragement, memory, or photo.
+    <div class="max-w-3xl mx-auto px-4">
+      <h1 class="text-4xl sm:text-5xl font-black tracking-tight">Memory Wall for Charlie</h1>
+      <p class="mt-4 text-slate-200 text-lg">
+        Leave a message for the Kirk Family. Share your prayers, memories, and encouragement.
       </p>
-      <div class="mt-6 flex flex-wrap justify-center gap-3">
-        <a href="#share" class="inline-flex items-center justify-center rounded-2xl bg-white text-slate-900 px-4 py-2 text-sm font-semibold shadow hover:shadow-lg active:scale-[.99]">Leave a Message</a>
-        <a href="#wall" class="inline-flex items-center justify-center rounded-2xl border border-white/20 px-4 py-2 text-sm font-semibold hover:bg-white/5">View Messages</a>
-      </div>
     </div>
   </section>
 
   <!-- FORM -->
-  <section id="share" class="mx-auto max-w-5xl px-4 pb-8">
-    <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6 sm:p-8">
-      <h2 class="text-2xl font-bold">Leave a message</h2>
-      <p class="mt-1 text-sm text-slate-300">Your post will appear on the wall. Photo is optional (JPG/PNG/WebP, ≤ 5 MB).</p>
+  <section class="max-w-4xl mx-auto px-4 pb-16">
+    <div class="bg-slate-900 rounded-2xl p-6 shadow-lg">
+      <h2 class="text-xl font-bold mb-3">Leave a message</h2>
+      <p class="text-sm text-slate-400 mb-4">
+        Your post will appear on the wall. Photo is optional (JPG/PNG/WebP ≤ 5 MB).
+      </p>
 
-      <form id="memoryForm" class="mt-6 space-y-4" aria-label="Post a new message">
-        <div class="grid sm:grid-cols-2 gap-4">
-          <input type="text" id="name" name="name" placeholder="Full Name" required
-                 class="w-full px-4 py-3 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-amber-400" />
-          <input type="text" id="location" name="location" placeholder="City, State (optional)"
-                 class="w-full px-4 py-3 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-amber-400" />
+      <form id="memoryForm" class="space-y-4" autocomplete="off">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <input id="name" name="name" placeholder="Your name/family" 
+                 class="rounded-lg px-3 py-2 bg-slate-800 text-white w-full" autocomplete="off">
+          <input id="location" name="location" placeholder="City, State" 
+                 class="rounded-lg px-3 py-2 bg-slate-800 text-white w-full" autocomplete="off">
         </div>
+
+        <textarea id="message" name="message" rows="4" maxlength="800" 
+                  class="rounded-lg px-3 py-2 bg-slate-800 text-white w-full" 
+                  placeholder="Write your message here..." autocomplete="off"></textarea>
+        <p id="chars" class="text-xs text-slate-400">0/800</p>
 
         <div>
-          <textarea id="message" name="message" rows="6" maxlength="800"
-                    placeholder="Write your prayer, encouragement, or memory here… (max 800 characters)"
-                    class="w-full px-4 py-3 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-amber-400" required></textarea>
-          <div class="mt-1 text-xs text-slate-300"><span id="chars">0</span>/800</div>
+          <input type="file" id="photo" accept="image/*" class="block text-sm text-slate-300">
+          <p id="preview" class="text-xs text-slate-400 mt-1">No photo selected</p>
+          <div class="w-full bg-slate-800 h-1 mt-2 rounded">
+            <div id="progress" class="bg-amber-500 h-1 rounded transition-all duration-300" style="width:0%"></div>
+          </div>
         </div>
 
-        <div class="grid sm:grid-cols-[1fr_auto] gap-3 items-center">
-          <input id="photo" type="file" accept="image/png,image/jpeg,image/webp"
-                 class="w-full rounded-md bg-white/90 text-black file:mr-3 file:px-3 file:py-2 file:rounded-md file:border-0 file:bg-amber-500 file:text-black file:font-semibold file:hover:bg-amber-400" />
-          <div id="preview" class="justify-self-end text-xs text-slate-300">No photo selected</div>
-        </div>
-
-        <div class="flex flex-wrap items-center gap-3">
-          <button id="submitBtn" type="submit"
-                  class="bg-amber-500 text-black font-bold py-3 px-6 rounded-md shadow-md hover:bg-amber-400 transition">
-            Post to Wall
-          </button>
-          <span id="formStatus" class="text-sm text-slate-300" role="status" aria-live="polite"></span>
-        </div>
-
-        <div class="h-1 bg-white/10 rounded overflow-hidden">
-          <div id="progress" class="h-1 w-0 bg-amber-400 transition-all"></div>
-        </div>
+        <button type="submit" id="submitBtn"
+                class="bg-amber-600 hover:bg-amber-500 px-4 py-2 rounded-lg font-semibold text-white">
+          Post to Wall
+        </button>
+        <p id="formStatus" class="text-sm mt-2"></p>
       </form>
     </div>
   </section>
 
   <!-- WALL -->
-  <section id="wall" class="mx-auto max-w-6xl px-4 pb-16">
-    <h2 class="text-2xl font-bold mb-4">Messages for the Kirk Family</h2>
-
-    <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-4">
-      <div id="wallList" class="grid gap-4 max-h-[34rem] overflow-y-auto pr-2" tabindex="0" aria-label="Messages list">
-        <!-- Skeleton placeholders -->
-        <div class="rounded-2xl p-4 ring-1 ring-white/10 skeleton h-28"></div>
-        <div class="rounded-2xl p-4 ring-1 ring-white/10 skeleton h-28"></div>
-        <div class="rounded-2xl p-4 ring-1 ring-white/10 skeleton h-28"></div>
-      </div>
-      <div class="flex justify-center">
-        <button id="loadMore" class="mt-4 hidden rounded-xl border border-white/20 px-4 py-2 text-sm hover:bg-white/5">
-          Load more
-        </button>
-      </div>
-      <div id="wallEmpty" class="hidden text-center py-10 text-slate-400">Messages will appear here shortly.</div>
-    </div>
-
-    <p class="mt-3 text-xs text-slate-400">
-      Need a post removed or edited? Email <a href="mailto:GodsCountryMarch@gmail.com" class="underline">GodsCountryMarch@gmail.com</a>.
-    </p>
+  <section class="max-w-5xl mx-auto px-4 pb-20">
+    <h2 class="text-2xl font-bold mb-6">Messages</h2>
+    <div id="messages" class="space-y-6 max-h-[600px] overflow-y-auto pr-2"></div>
   </section>
 
-  <!-- Firebase (ES Modules) -->
+  <!-- FIREBASE -->
   <script type="module">
-    // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy, onSnapshot } 
+      from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+    import { getStorage, ref, uploadBytes, getDownloadURL } 
+      from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
-    import {
-      getFirestore, collection, addDoc, query, orderBy, limit, onSnapshot,
-      startAfter, serverTimestamp
-    } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-    import {
-      getStorage, ref, uploadBytes, getDownloadURL
-    } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
 
-    // Your web app's Firebase configuration (from your console)
     const firebaseConfig = {
       apiKey: "AIzaSyAGwWozUzlpVTE4F_CKNK-eBWa7U18Kxic",
       authDomain: "godscountrymarch-c0e4c.firebaseapp.com",
       projectId: "godscountrymarch-c0e4c",
-      storageBucket: "godscountrymarch-c0e4c.firebasestorage.app",
+      storageBucket: "godscountrymarch-c0e4c.appspot.com",
       messagingSenderId: "890204418757",
       appId: "1:890204418757:web:4e1b3dca1406df77e4f6ac",
       measurementId: "G-QGP1C4XHC0"
     };
 
-    // Initialize Firebase
     const app = initializeApp(firebaseConfig);
-    getAnalytics(app);
+    const analytics = getAnalytics(app);
     const db = getFirestore(app);
     const storage = getStorage(app);
 
-    // UI elements
     const form = document.getElementById('memoryForm');
     const nameEl = document.getElementById('name');
     const locationEl = document.getElementById('location');
     const messageEl = document.getElementById('message');
     const fileInput = document.getElementById('photo');
+    const charsEl = document.getElementById('chars');
     const preview = document.getElementById('preview');
     const progressBar = document.getElementById('progress');
     const statusEl = document.getElementById('formStatus');
     const btn = document.getElementById('submitBtn');
-    const wall = document.getElementById('wallList');
-    const wallEmpty = document.getElementById('wallEmpty');
-    const loadMoreBtn = document.getElementById('loadMore');
-    const charsEl = document.getElementById('chars');
+    const messagesDiv = document.getElementById('messages');
 
-    // Character counter
-    const updateCount = () => charsEl.textContent = messageEl.value.length;
-    messageEl.addEventListener('input', updateCount); updateCount();
-
-    // File preview text
-    fileInput.addEventListener('change', () => {
-      const f = fileInput.files[0];
-      preview.textContent = f ? `Selected: ${f.name}` : 'No photo selected';
+    messageEl.addEventListener('input', () => {
+      charsEl.textContent = `${messageEl.value.length}/800`;
     });
 
-    // Simple client-side guardrails
-    function ensureImageOk(file) {
-      if (!file) return true;
-      const okTypes = ['image/jpeg','image/jpg','image/png','image/webp'];
-      if (!okTypes.includes(file.type)) { throw new Error('Please upload a JPG, PNG, or WebP image.'); }
-      if (file.size > 5 * 1024 * 1024)   { throw new Error('Image must be 5 MB or less.'); }
-      return true;
-    }
+    fileInput.addEventListener('change', () => {
+      preview.textContent = fileInput.files[0] ? fileInput.files[0].name : 'No photo selected';
+    });
 
-    // Client-side image compression to 2000px max dimension, JPEG ~82%
-    async function compressImage(file) {
-      if (!file) return null;
-      await ensureImageOk(file);
-      const img = new Image(); img.src = URL.createObjectURL(file);
-      await new Promise(r => img.onload = r);
-
-      const maxDim = 2000;
-      let { width, height } = img;
-      if (width <= maxDim && height <= maxDim) return file; // already small enough
-
-      const ratio = width > height ? maxDim/width : maxDim/height;
-      const canvas = document.createElement('canvas');
-      canvas.width = Math.round(width * ratio);
-      canvas.height = Math.round(height * ratio);
-      const ctx = canvas.getContext('2d');
-      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-
-      return await new Promise(resolve => {
-        canvas.toBlob(b => resolve(new File([b], file.name.replace(/\.(png|jpg|jpeg|webp)$/i,'.jpg'), { type: 'image/jpeg' })), 'image/jpeg', 0.82);
-      });
-    }
-
-    // Post submission
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       statusEl.textContent = '';
-      btn.disabled = true; btn.classList.add('opacity-60','cursor-not-allowed');
+      btn.disabled = true;
       progressBar.style.width = '0%';
 
       const name = (nameEl.value || 'Anonymous').trim();
       const location = (locationEl.value || '').trim();
       const message = (messageEl.value || '').trim();
 
-      if (!message) { statusEl.textContent = 'Please enter a message.'; btn.disabled = false; btn.classList.remove('opacity-60','cursor-not-allowed'); return; }
+      if (!message) {
+        statusEl.textContent = 'Please enter a message.';
+        btn.disabled = false;
+        return;
+      }
 
       try {
-        const original = fileInput.files[0];
         let imageUrl = '';
-        if (original) {
-          const file = await compressImage(original);
+        const file = fileInput.files[0];
+        if (file) {
           const safe = `${Date.now()}_${file.name.replace(/[^a-zA-Z0-9._-]/g,'_')}`;
           const r = ref(storage, `uploads/${safe}`);
-          // uploadBytes doesn’t expose progress; keep a subtle fake progress for UX
           progressBar.style.width = '40%';
           await uploadBytes(r, file);
           progressBar.style.width = '70%';
           imageUrl = await getDownloadURL(r);
           progressBar.style.width = '100%';
-          setTimeout(()=> progressBar.style.width = '0%', 600);
+          setTimeout(() => (progressBar.style.width = '0%'), 600);
         }
 
         await addDoc(collection(db, 'memories'), {
-          name, location, message, imageUrl,
-          createdAt: serverTimestamp()
+          name, location, message, imageUrl, createdAt: serverTimestamp(),
         });
 
         form.reset();
+        nameEl.value = '';
+        locationEl.value = '';
+        messageEl.value = '';
+        fileInput.value = '';
+        charsEl.textContent = '0/800';
         preview.textContent = 'No photo selected';
+
         statusEl.textContent = 'Posted! Thank you.';
-        setTimeout(()=> statusEl.textContent = '', 2000);
+        setTimeout(() => (statusEl.textContent = ''), 2000);
       } catch (err) {
         console.error(err);
-        statusEl.textContent = err.message || 'Sorry, post failed. Please try again.';
+        statusEl.textContent = 'Error: ' + err.message;
       } finally {
-        btn.disabled = false; btn.classList.remove('opacity-60','cursor-not-allowed');
+        btn.disabled = false;
       }
     });
 
-    // --- Live wall (initial page + “Load more”) ---
-    const PAGE_SIZE = 20;
-    let lastDoc = null;
-    let unsub = null;
+    const q = query(collection(db, 'memories'), orderBy('createdAt', 'desc'));
+    onSnapshot(q, (snapshot) => {
+      messagesDiv.innerHTML = '';
+      snapshot.forEach((doc) => {
+        const data = doc.data();
+        const card = document.createElement('div');
+        card.className = "bg-slate-900 rounded-xl p-4 shadow relative";
 
-    function shareLinks(text, id) {
-      const page = location.origin + location.pathname + (id ? `#${id}` : '');
-      const url = encodeURIComponent(page);
-      const quote = encodeURIComponent(text.slice(0, 240));
-      return {
-        x: `https://twitter.com/intent/tweet?text=${quote}&url=${url}`,
-        fb: `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${quote}`,
-        copy: page
-      };
-    }
-
-    function fmtDate(ts) {
-      try {
-        const d = ts?.toDate ? ts.toDate() : (ts instanceof Date ? ts : new Date());
-        return d.toLocaleDateString();
-      } catch { return ''; }
-    }
-
-    function renderCards(docs, append=false) {
-      if (!append) wall.innerHTML = '';
-      if (!docs.length && !append) { wallEmpty.classList.remove('hidden'); return; }
-      wallEmpty.classList.add('hidden');
-
-      docs.forEach(docSnap => {
-        const d = docSnap.data();
-        const id = docSnap.id;
-        const who = [d.name || 'Anonymous', d.location].filter(Boolean).join(' — ');
-        const when = fmtDate(d.createdAt);
-        const share = shareLinks(`${d.name || 'Anonymous'}: ${d.message || ''}`, id);
-
-        const card = document.createElement('article');
-        card.id = id;
-        card.className = 'rounded-2xl bg-white/5 ring-1 ring-white/10 p-4 sm:p-5';
         card.innerHTML = `
-          <div class="flex items-start justify-between gap-3">
-            <div class="min-w-0">
-              ${d.imageUrl ? `<img src="${d.imageUrl}" alt="attachment" loading="lazy" class="mb-3 max-h-72 w-auto rounded-lg ring-1 ring-white/10" />` : ''}
-              <p class="text-sm text-slate-200 whitespace-pre-wrap">${(d.message || '').replace(/</g,'&lt;')}</p>
-              <p class="mt-2 text-xs text-slate-400">— ${who}${when ? ` • ${when}` : ''}</p>
-            </div>
-            <div class="shrink-0 flex gap-1">
-              <a href="${share.x}" target="_blank" rel="noopener" title="Share on X" class="rounded-lg bg-white/10 px-2 py-1 text-xs hover:bg-white/20">X</a>
-              <a href="${share.fb}" target="_blank" rel="noopener" title="Share on Facebook" class="rounded-lg bg-white/10 px-2 py-1 text-xs hover:bg-white/20">FB</a>
-              <button data-copy="${share.copy}" title="Copy link" class="copylink rounded-lg bg-white/10 px-2 py-1 text-xs hover:bg-white/20">Link</button>
-            </div>
-          </div>`;
-        wall.appendChild(card);
+          <p class="text-sm text-slate-400 mb-1">
+            <span class="font-semibold text-white">${data.name || 'Anonymous'}</span> 
+            ${data.location ? `from ${data.location}` : ''}
+          </p>
+          <p class="text-slate-200 whitespace-pre-line mb-2">${data.message || ''}</p>
+          ${data.imageUrl ? `<img src="${data.imageUrl}" class="rounded max-h-60 object-cover mb-3"/>` : ''}
+          <div class="flex gap-3 text-xs text-slate-400">
+            <a href="https://twitter.com/intent/tweet?text=${encodeURIComponent(data.message)}" target="_blank" class="hover:text-amber-400">Share on X</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}" target="_blank" class="hover:text-amber-400">Share on Facebook</a>
+          </div>
+        `;
+        messagesDiv.appendChild(card);
       });
-
-      // Copy link handlers
-      wall.querySelectorAll('.copylink').forEach(btn => {
-        btn.addEventListener('click', async () => {
-          try { await navigator.clipboard.writeText(btn.dataset.copy); btn.textContent = 'Copied'; setTimeout(()=>btn.textContent='Link',1200); } catch(e) {}
-        });
-      });
-    }
-
-    async function loadInitial() {
-      // real-time for first PAGE_SIZE
-      const q = query(collection(db, 'memories'), orderBy('createdAt', 'desc'), limit(PAGE_SIZE));
-      unsub = onSnapshot(q, snap => {
-        const docs = snap.docs;
-        lastDoc = docs.length ? docs[docs.length - 1] : null;
-        renderCards(docs, false);
-        loadMoreBtn.classList.toggle('hidden', !lastDoc);
-      });
-    }
-
-    async function loadMore() {
-      if (!lastDoc) return;
-      loadMoreBtn.disabled = true;
-      const { getDocs } = await import("https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js");
-      const q2 = query(collection(db, 'memories'), orderBy('createdAt','desc'), startAfter(lastDoc), limit(PAGE_SIZE));
-      const snap = await getDocs(q2);
-      const docs = snap.docs;
-      lastDoc = docs.length ? docs[docs.length - 1] : null;
-      renderCards(docs, true);
-      loadMoreBtn.disabled = false;
-      loadMoreBtn.classList.toggle('hidden', !lastDoc);
-    }
-
-    loadInitial();
-    loadMoreBtn.addEventListener('click', loadMore);
+    });
   </script>
-
-  <!--
-    🔒 Firebase Rules (set these in Console > Build > Firestore/Storage > Rules)
-    These are simple, public-read + public-create with basic size/type limits.
-    Consider tightening with App Check, reCAPTCHA, or moderation if needed.
-
-    // Firestore
-    rules_version = '2';
-    service cloud.firestore {
-      match /databases/{database}/documents {
-        match /memories/{docId} {
-          allow read: if true;
-          allow create: if request.time < timestamp.date(2030,1,1)
-                         && request.resource.data.message is string
-                         && request.resource.data.message.size() > 0
-                         && request.resource.data.message.size() <= 800
-                         && request.resource.data.name is string
-                         && request.resource.data.name.size() <= 120;
-        }
-      }
-    }
-
-    // Storage
-    rules_version = '2';
-    service firebase.storage {
-      match /b/{bucket}/o {
-        match /uploads/{allPaths=**} {
-          allow read: if true;
-          allow write: if request.resource.size < 5 * 1024 * 1024
-                        && request.resource.contentType.matches('image/(jpeg|jpg|png|webp)');
-        }
-      }
-    }
-  -->
 </body>
 </html>
