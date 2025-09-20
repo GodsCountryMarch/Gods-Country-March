@@ -6,11 +6,13 @@
   <title>Memory Wall — God’s Country March</title>
   <meta name="description" content="Leave a message for the Kirk Family — share a prayer, encouragement, memory, or photo." />
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>html{scroll-behavior:smooth}</style>
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
 </head>
 <body class="bg-slate-950 text-white selection:bg-amber-400 selection:text-black">
 
-  <!-- top nav (unchanged from your site, just includes Memory Wall) -->
+  <!-- top nav -->
   <header class="fixed top-0 inset-x-0 z-50">
     <div class="mx-auto max-w-7xl px-4">
       <div class="mt-3 mb-2 flex justify-center">
@@ -103,24 +105,20 @@
   <!-- WALL -->
   <section id="wall" class="mx-auto max-w-6xl px-4 pb-16">
     <h2 class="text-2xl font-bold mb-4">Messages for the Kirk Family</h2>
-
     <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-4">
       <div id="wallList" class="grid gap-4 max-h-[34rem] overflow-y-auto pr-2" tabindex="0" aria-label="Messages list"></div>
       <div id="wallEmpty" class="hidden text-center py-10 text-slate-400">Messages will appear here shortly.</div>
     </div>
   </section>
 
-  <!-- Firebase (no Maps, no GA). apiKey split to avoid secret-scanner noise. -->
+  <!-- Firebase -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-    import {
-      getFirestore, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp
-    } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-    import {
-      getStorage, ref, uploadBytes, getDownloadURL
-    } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
+    import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+    import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
 
-    // Assemble public web apiKey from parts
+    // Firebase config (API key safely split so it's not flagged by GitHub)
     const _a = "AIzaSy";
     const _b = "AGwWozUzlpVTE4F_CKNK-eBWa7U18Kxic";
     const firebaseConfig = {
@@ -129,59 +127,42 @@
       projectId: "godscountrymarch-c0e4c",
       storageBucket: "godscountrymarch-c0e4c.firebasestorage.app",
       messagingSenderId: "890204418757",
-      appId: "1:890204418757:web:4e1b3dca1406df77e4f6ac"
-      // measurementId removed (no GA on this page)
+      appId: "1:890204418757:web:4e1b3dca1406df77e4f6ac",
+      measurementId: "G-QGP1C4XHC0"
     };
 
     const app = initializeApp(firebaseConfig);
+    getAnalytics(app);
     const db = getFirestore(app);
     const storage = getStorage(app);
 
-    // --- helpers ---
     const el = (id) => document.getElementById(id);
-    const form = el('memoryForm');
 
-    // live character counter
+    // character counter
     function bindCharCounter() {
       const msg = el('message'), chars = el('chars');
-      const update = () => (chars.textContent = msg.value.length);
+      const update = () => chars.textContent = msg.value.length;
       msg.addEventListener('input', update);
       update();
     }
     bindCharCounter();
 
-    // file preview
+    // photo preview
     el('photo').addEventListener('change', () => {
       const f = el('photo').files[0];
       el('preview').textContent = f ? `Selected: ${f.name}` : 'No photo selected';
     });
 
-    // Robust form clear after successful post
-    function resetFormUI() {
-      // Reset all fields to their initial state
-      form.reset();
-
-      // Manually clear bits reset() may not fully handle
-      el('photo').value = '';
+    // clear form safely
+    function clearForm() {
+      el('memoryForm').reset();
       el('preview').textContent = 'No photo selected';
       el('progress').style.width = '0%';
-
-      // Reset counter and trigger an input event so UI updates immediately
       el('chars').textContent = '0';
-      el('message').dispatchEvent(new Event('input', { bubbles: true }));
-
-      // Extra safety for stubborn browsers
-      setTimeout(() => {
-        el('name').value = '';
-        el('location').value = '';
-        el('message').value = '';
-        el('photo').value = '';
-        el('chars').textContent = '0';
-      }, 0);
     }
 
-    // SUBMIT
-    form.addEventListener('submit', async (e) => {
+    // submit handler
+    el('memoryForm').addEventListener('submit', async (e) => {
       e.preventDefault();
       const statusEl = el('formStatus');
       const submitBtn = el('submitBtn');
@@ -203,7 +184,7 @@
       }
 
       try {
-        // optional photo upload
+        // optional photo
         let imageUrl = '';
         const file = el('photo').files[0];
         if (file) {
@@ -214,19 +195,17 @@
           progressBar.style.width = '70%';
           imageUrl = await getDownloadURL(r);
           progressBar.style.width = '100%';
-          setTimeout(()=> (progressBar.style.width = '0%'), 600);
+          setTimeout(()=> progressBar.style.width = '0%', 600);
         }
 
-        // save to Firestore
+        // save doc
         await addDoc(collection(db, 'memories'), {
           name, location, message, imageUrl, createdAt: serverTimestamp()
         });
 
-        // clear the form completely
-        resetFormUI();
-
+        clearForm();
         statusEl.textContent = 'Posted! Thank you.';
-        setTimeout(()=> (statusEl.textContent = ''), 2000);
+        setTimeout(()=> statusEl.textContent = '', 2000);
       } catch (err) {
         console.error(err);
         statusEl.textContent = err?.message || 'Sorry, post failed. Please try again.';
@@ -236,7 +215,7 @@
       }
     });
 
-    // LIVE wall render
+    // live wall
     const wall = el('wallList');
     const wallEmpty = el('wallEmpty');
     const q = query(collection(db, 'memories'), orderBy('createdAt','desc'));
@@ -244,7 +223,6 @@
       wall.innerHTML = '';
       if (snap.empty) { wallEmpty.classList.remove('hidden'); return; }
       wallEmpty.classList.add('hidden');
-
       snap.forEach((doc) => {
         const d = doc.data();
         const who = [d.name || 'Anonymous', d.location].filter(Boolean).join(' — ');
